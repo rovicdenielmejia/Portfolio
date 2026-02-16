@@ -152,8 +152,16 @@
         if (el.phone && el.phone.value.trim()) body.push('Phone: ' + el.phone.value.trim());
         body.push('');
         if (el.message && el.message.value) body.push(el.message.value.trim());
-        var mailto = 'mailto:' + to + '?cc=' + encodeURIComponent(cc) + '&subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body.join('\n'));
-        window.location.href = mailto;
+        var bodyStr = body.join('\n');
+        var maxBodyLen = 1200;
+        if (bodyStr.length > maxBodyLen) bodyStr = bodyStr.slice(0, maxBodyLen) + '\n\n[... message truncated for email link ...]';
+        var mailto = 'mailto:' + to + '?cc=' + encodeURIComponent(cc) + '&subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(bodyStr);
+        var a = document.createElement('a');
+        a.href = mailto;
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
       });
     })();
   </script>
