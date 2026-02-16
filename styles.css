@@ -311,7 +311,10 @@ body.page main {
   width: 100%;
   max-width: 900px;
   min-height: 280px;
+  min-width: 0;
   gap: 0;
+  padding-left: max(0.5rem, var(--safe-left));
+  padding-right: max(0.5rem, var(--safe-right));
 }
 
 .hero-photo-wrap {
@@ -361,6 +364,8 @@ body.page main {
   margin: 0;
   text-align: center;
   white-space: nowrap;
+  max-width: 100%;
+  min-width: 0;
   animation: heroFadeIn 0.8s ease-out;
 }
 
@@ -376,6 +381,10 @@ body.page main {
   text-align: center;
   z-index: 1;
   animation: heroFadeIn 0.8s ease-out 0.2s both;
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .hero-cta {
@@ -2115,9 +2124,14 @@ body.page main {
     font-size: clamp(2.25rem, 14vw, 3rem);
   }
 
+  .hero-center-wrap {
+    padding-left: max(1rem, var(--safe-left));
+    padding-right: max(1rem, var(--safe-right));
+  }
+
   .hero-tagline {
     font-size: 0.85rem;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     margin: 0.75rem 0 1rem;
   }
 
