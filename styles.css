@@ -31,9 +31,54 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Skip link – visible when focused (keyboard/screen reader) */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 300;
+  padding: 0.75rem 1.25rem;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 6px 0;
+  transform: translateY(-100%);
+  transition: transform 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid var(--bg);
+  outline-offset: 2px;
+}
+
+/* Focus visible – keyboard/screen reader friendly, minimal for pointer */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline-offset: 2px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .skip-link {
+    transition: none;
   }
 }
 
@@ -519,8 +564,17 @@ body.page main {
 .messenger-float:hover {
   background: #0066cc;
   color: #fff;
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0, 132, 255, 0.5);
+}
+
+@media (hover: hover) {
+  .messenger-float:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 132, 255, 0.5);
+  }
+}
+
+.messenger-float:active {
+  transform: scale(0.98);
 }
 
 .messenger-float svg {
@@ -1297,6 +1351,8 @@ body.page main {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.25s, visibility 0.25s;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .inquire-modal[aria-hidden="false"] {
@@ -1309,6 +1365,7 @@ body.page main {
   inset: 0;
   background: rgba(0, 0, 0, 0.75);
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .inquire-modal-box {
@@ -1317,12 +1374,15 @@ body.page main {
   width: 100%;
   max-width: 28rem;
   max-height: 90vh;
+  max-height: 90dvh;
   overflow-y: auto;
+  overflow-x: hidden;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  -webkit-overflow-scrolling: touch;
 }
 
 .inquire-modal-close {
@@ -1361,6 +1421,39 @@ body.page main {
 
 .inquire-modal .inquire-form {
   margin-top: 0;
+}
+
+/* Inquire modal – mobile */
+@media (max-width: 640px) {
+  .inquire-modal {
+    padding: max(0.5rem, var(--safe-top)) max(0.5rem, var(--safe-right)) max(0.5rem, var(--safe-bottom)) max(0.5rem, var(--safe-left));
+    align-items: flex-end;
+  }
+
+  .inquire-modal-box {
+    max-width: none;
+    max-height: min(90vh, 90dvh);
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.25rem max(1rem, var(--safe-left)) calc(1.25rem + var(--safe-bottom)) max(1rem, var(--safe-right));
+    border-radius: 12px 12px 0 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .inquire-modal-close {
+    top: 0.75rem;
+    right: max(0.75rem, var(--safe-right));
+    width: 44px;
+    height: 44px;
+    min-width: var(--touch-min);
+    min-height: var(--touch-min);
+  }
+
+  .inquire-modal-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-right: 3rem;
+  }
 }
 
 /* Education */
@@ -1620,8 +1713,13 @@ body.page main {
 
 .inquire-form input:focus,
 .inquire-form textarea:focus {
-  outline: none;
   border-color: var(--accent);
+}
+
+.inquire-form input:focus-visible,
+.inquire-form textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .inquire-form textarea {
@@ -1980,10 +2078,24 @@ body.page main {
     width: 44px;
     height: 44px;
     bottom: max(1rem, var(--safe-bottom));
-    right: max(1rem, var(--safe-right));
+    left: max(1rem, var(--safe-left));
   }
 
   .back-to-top svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .messenger-float {
+    width: 44px;
+    height: 44px;
+    bottom: max(1rem, var(--safe-bottom));
+    right: max(1rem, var(--safe-right));
+    min-width: var(--touch-min);
+    min-height: var(--touch-min);
+  }
+
+  .messenger-float svg {
     width: 22px;
     height: 22px;
   }
