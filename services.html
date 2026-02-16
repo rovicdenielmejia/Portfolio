@@ -95,6 +95,11 @@
                 <li>Open to revisions & client collaboration</li>
               </ul>
             </div>
+            <div class="services-box services-box-inquire" id="inquire-graphic">
+              <h3 class="services-box-title">Inquire</h3>
+              <p class="services-inquire-intro">Send an inquiry for Graphic Design services.</p>
+              <button type="button" class="btn btn-primary services-inquire-btn" data-inquire-subject="GRAPHIC DESIGN Services" data-inquire-title="GRAPHIC DESIGN Services">Inquire about this service</button>
+            </div>
           </div>
         </div>
 
@@ -135,15 +140,46 @@
                 <li>Remote / Work-From-Home setup to reduce costs</li>
               </ul>
             </div>
-            <div class="services-box services-box-cta">
-              <p class="services-cta-text">Let’s build your workforce.</p>
-              <p class="services-cta-sub">Message today and let us help you hire with <strong>speed</strong>, <strong>quality</strong>, and <strong>confidence</strong>.</p>
-              <p class="services-slogan">People-first recruitment. Results-driven hiring.</p>
+            <div class="services-box services-box-inquire" id="inquire-hr">
+              <h3 class="services-box-title">Inquire</h3>
+              <p class="services-inquire-intro">Send an inquiry for HR &amp; Recruitment services.</p>
+              <button type="button" class="btn btn-primary services-inquire-btn" data-inquire-subject="HR & RECRUITMENT Services" data-inquire-title="HR & RECRUITMENT Services">Inquire about this service</button>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Inquire modal (opened by "Inquire about this service" buttons) -->
+    <div id="inquire-modal" class="inquire-modal" role="dialog" aria-modal="true" aria-labelledby="inquire-modal-title" aria-hidden="true">
+      <div class="inquire-modal-backdrop" tabindex="-1"></div>
+      <div class="inquire-modal-box">
+        <button type="button" class="inquire-modal-close" aria-label="Close">×</button>
+        <h2 id="inquire-modal-title" class="inquire-modal-title">Inquire</h2>
+        <form id="inquire-modal-form" class="inquire-form service-inquire-form" aria-label="Inquiry form">
+          <input type="hidden" name="subject" value="">
+          <div class="inquire-form-row">
+            <label for="inquire-modal-name">Name <span class="required">*</span></label>
+            <input type="text" id="inquire-modal-name" name="name" required placeholder="Your name" autocomplete="name">
+          </div>
+          <div class="inquire-form-row">
+            <label for="inquire-modal-email">Email <span class="required">*</span></label>
+            <input type="email" id="inquire-modal-email" name="email" required placeholder="your@email.com" autocomplete="email">
+          </div>
+          <div class="inquire-form-row">
+            <label for="inquire-modal-phone">Phone</label>
+            <input type="tel" id="inquire-modal-phone" name="phone" placeholder="Numbers only (e.g. 09171234567)" autocomplete="tel" inputmode="numeric" pattern="[0-9]*" title="Numbers only, no letters">
+          </div>
+          <div class="inquire-form-row">
+            <label for="inquire-modal-message">Message <span class="required">*</span></label>
+            <textarea id="inquire-modal-message" name="message" required rows="4" placeholder="Your message..."></textarea>
+          </div>
+          <div class="inquire-form-actions">
+            <button type="submit" class="btn btn-primary">Send inquiry</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </main>
   <footer class="footer">
     <div class="container">
@@ -196,9 +232,94 @@
       </div>
     </div>
   </footer>
+  <a href="https://m.me/rovicmejia07" target="_blank" rel="noopener" class="messenger-float" aria-label="Chat on Messenger">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17l-1.12 4.09 4.6-2.42c1.22.17 2.47.26 3.78.26 5.64 0 10-4.13 10-9.7S17.64 2 12 2zm.04 12.27l-2.89-3.1-5.66 3.1 6.31-6.76 2.87 3.1 5.66-3.1-6.31 6.76z"/></svg>
+  </a>
   <a href="#" class="back-to-top" id="back-to-top" aria-label="Back to top">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
   </a>
   <script src="script.js?v=4"></script>
+  <script>
+    (function() {
+      function initInquireModal() {
+        var modal = document.getElementById('inquire-modal');
+        var modalTitle = document.getElementById('inquire-modal-title');
+        var modalForm = document.getElementById('inquire-modal-form');
+        var subjectInput = modalForm ? modalForm.querySelector('input[name="subject"]') : null;
+
+        var openModal = function(subject, title) {
+          if (!modal || !modalForm) return;
+          if (subjectInput) subjectInput.value = subject || '';
+          if (modalTitle) modalTitle.textContent = title || 'Inquire';
+          modal.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        };
+
+        var closeModal = function() {
+          if (!modal) return;
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        };
+
+        var closeBtn = modal ? modal.querySelector('.inquire-modal-close') : null;
+        var backdrop = modal ? modal.querySelector('.inquire-modal-backdrop') : null;
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        if (backdrop) backdrop.addEventListener('click', closeModal);
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && modal && modal.getAttribute('aria-hidden') === 'false') closeModal();
+        });
+
+        document.querySelectorAll('.services-inquire-btn').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var subject = this.getAttribute('data-inquire-subject') || '';
+            var title = this.getAttribute('data-inquire-title') || 'Inquire';
+            openModal(subject, title);
+          });
+        });
+
+        if (!modalForm) return;
+
+        var phoneInput = modalForm.querySelector('input[name="phone"]');
+        if (phoneInput) {
+          phoneInput.addEventListener('input', function() { this.value = this.value.replace(/[^0-9]/g, ''); });
+          phoneInput.addEventListener('paste', function(e) {
+            e.preventDefault();
+            var pasted = (e.clipboardData || window.clipboardData).getData('text').replace(/[^0-9]/g, '');
+            var start = this.selectionStart, end = this.selectionEnd;
+            this.value = this.value.slice(0, start) + pasted + this.value.slice(end);
+            this.setSelectionRange(start + pasted.length, start + pasted.length);
+          });
+        }
+
+        modalForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var to = 'rovicdenielmejia@gmail.com';
+          var cc = 'wrs.recruitment.hr@gmail.com,techprintcoreph@gmail.com,rovicmejia.hrd@gmail.com';
+          var subj = (subjectInput && subjectInput.value) ? subjectInput.value.trim() : 'Inquiry from portfolio';
+          var body = [];
+          var nameEl = modalForm.elements.name;
+          var emailEl = modalForm.elements.email;
+          var phoneEl = modalForm.elements.phone;
+          var messageEl = modalForm.elements.message;
+          if (nameEl && nameEl.value) body.push('Name: ' + nameEl.value.trim());
+          if (emailEl && emailEl.value) body.push('Email: ' + emailEl.value.trim());
+          if (phoneEl && phoneEl.value.trim()) body.push('Phone: ' + phoneEl.value.trim());
+          body.push('');
+          if (messageEl && messageEl.value) body.push(messageEl.value.trim());
+          var bodyStr = body.join('\n');
+          if (bodyStr.length > 1200) bodyStr = bodyStr.slice(0, 1200) + '\n\n[... message truncated for email link ...]';
+          var mailto = 'mailto:' + to + '?cc=' + encodeURIComponent(cc) + '&subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(bodyStr);
+          closeModal();
+          window.location.href = mailto;
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initInquireModal);
+      } else {
+        initInquireModal();
+      }
+    })();
+  </script>
 </body>
 </html>
