@@ -550,14 +550,19 @@ body.page main {
 /* Messenger float – chat with personal account */
 .messenger-float {
   position: fixed;
+  left: auto;
+  top: auto;
   bottom: max(1.5rem, var(--safe-bottom));
   right: max(1.5rem, var(--safe-right));
   z-index: 90;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   width: 48px;
   height: 48px;
+  max-width: 48px;
+  max-height: 48px;
   min-width: var(--touch-min);
   min-height: var(--touch-min);
   background: #0084ff;
@@ -568,6 +573,7 @@ body.page main {
   opacity: 1;
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
   -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
 }
 
 .messenger-float:hover {
@@ -589,6 +595,10 @@ body.page main {
 .messenger-float svg {
   width: 26px;
   height: 26px;
+  max-width: 26px;
+  max-height: 26px;
+  flex-shrink: 0;
+  display: block;
 }
 
 /* Sections */
@@ -2098,6 +2108,8 @@ body.page main {
   .messenger-float {
     width: 44px;
     height: 44px;
+    max-width: 44px;
+    max-height: 44px;
     bottom: max(1rem, var(--safe-bottom));
     right: max(1rem, var(--safe-right));
     min-width: var(--touch-min);
@@ -2107,12 +2119,21 @@ body.page main {
   .messenger-float svg {
     width: 22px;
     height: 22px;
+    max-width: 22px;
+    max-height: 22px;
   }
 }
 
 @media (max-width: 480px) {
   body.page main {
     padding-top: calc(5rem + var(--safe-top));
+  }
+
+  .messenger-float {
+    width: 44px !important;
+    height: 44px !important;
+    max-width: 44px !important;
+    max-height: 44px !important;
   }
 
   .hero-photo-wrap {
