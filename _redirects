@@ -1,0 +1,10 @@
+# Extensionless URLs: serve .html when path has no extension
+/home    /home.html    200
+/skills    /skills.html    200
+/experience    /experience.html    200
+/portfolio    /portfolio.html    200
+/services    /services.html    200
+/certification    /certification.html    200
+/inquire    /inquire.html    200
+# Default entry (optional: make / serve home)
+/    /home.html    200
