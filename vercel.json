@@ -7,6 +7,8 @@
     { "source": "/services", "destination": "/services.html" },
     { "source": "/certification", "destination": "/certification.html" },
     { "source": "/inquire", "destination": "/inquire.html" },
+    { "source": "/pageant-graphic-package", "destination": "/pageant-graphic-package.html" },
+    { "source": "/resume", "destination": "/resume.html" },
     { "source": "/", "destination": "/home.html" }
   ]
 }

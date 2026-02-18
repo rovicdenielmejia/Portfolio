@@ -6,5 +6,7 @@
 /services    /services.html    200
 /certification    /certification.html    200
 /inquire    /inquire.html    200
+/pageant-graphic-package    /pageant-graphic-package.html    200
+/resume    /resume.html    200
 # Default entry (optional: make / serve home)
 /    /home.html    200
