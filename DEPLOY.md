@@ -23,11 +23,11 @@ Follow these steps to deploy this portfolio using **GitHub** and **Netlify**.
    git add .
    git commit -m "Initial commit: portfolio site"
    git branch -M main
-   git remote add origin https://github.com/rovicdenielmejia/Portfolio.git
+   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
    git push -u origin main
    ```
 
-   This project uses the repository: [github.com/rovicdenielmejia/Portfolio](https://github.com/rovicdenielmejia/Portfolio).
+   Replace `YOUR_USERNAME` and `YOUR_REPO_NAME` with your GitHub username and repo name.
 
 ### If the project is already a Git repo
 

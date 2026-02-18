@@ -10,5 +10,15 @@
     { "source": "/pageant-graphic-package", "destination": "/pageant-graphic-package.html" },
     { "source": "/resume", "destination": "/resume.html" },
     { "source": "/", "destination": "/home.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    }
   ]
 }
