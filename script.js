@@ -33,6 +33,19 @@
       document.body.style.overflow = navLinks.classList.contains('is-open') ? 'hidden' : '';
     });
     document.querySelectorAll('.nav-links a').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        var parent = link.closest('.nav-item-has-children');
+        if (parent && window.matchMedia('(max-width: 700px)').matches && link.parentElement === parent) {
+          e.preventDefault();
+          parent.classList.toggle('is-open');
+          return;
+        }
+        navLinks.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+    document.querySelectorAll('.nav-dropdown a').forEach(function (link) {
       link.addEventListener('click', function () {
         navLinks.classList.remove('is-open');
         navToggle.setAttribute('aria-expanded', 'false');

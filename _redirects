@@ -1,6 +1,7 @@
 # Extensionless URLs: serve .html when path has no extension
 /home    /home.html    200
 /skills    /skills.html    200
+/about    /about.html    200
 /experience    /experience.html    200
 /portfolio    /portfolio.html    200
 /services    /services.html    200
@@ -8,7 +9,8 @@
 /hr-services    /hr-services.html    200
 /hr-recruitment    /hr-services.html    301
 /certification    /certification.html    200
-/inquire    /inquire.html    200
+/contact    /contact.html    200
+/inquire    /contact    301
 /pageant-graphic-package    /pageant-graphic-package.html    200
 /graphic-design-packages    /graphic-design-packages.html    200
 /client-policy    /client-policy.html    200
