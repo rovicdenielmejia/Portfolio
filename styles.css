@@ -888,6 +888,163 @@ body.page main {
   }
 }
 
+/* Services overview (main Services page) */
+#services .section-title.split-title {
+  justify-content: center;
+  text-align: center;
+}
+
+#services .services-hero-subtitle {
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin: -0.25rem auto 0.75rem;
+  max-width: 42rem;
+  text-align: center;
+}
+
+#services .services-intro-lead {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin: 0 auto 2rem;
+  max-width: 42rem;
+  text-align: justify;
+}
+
+.services-overview {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.services-overview-card-hybrid {
+  grid-column: 1 / -1;
+  justify-self: center;
+  max-width: 28rem;
+}
+
+.services-overview-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-overview-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--accent);
+  border-radius: 16px 0 0 16px;
+}
+
+.services-overview-card:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.services-overview-title {
+  margin: 0;
+  font-size: 1.15rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25em;
+}
+
+.services-pillar-tagline {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0.25rem 0 0.5rem;
+  line-height: 1.4;
+}
+
+.services-overview-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.services-includes-heading {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 1rem 0 0.5rem;
+}
+
+.services-includes {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.services-includes li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.services-includes li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.services-overview-card .btn {
+  align-self: center;
+  margin-top: 0.25rem;
+}
+
+.services-overview-card-hybrid .services-overview-desc {
+  margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .services-overview {
+    grid-template-columns: 1fr;
+  }
+  .services-overview-card-hybrid {
+    max-width: none;
+  }
+}
+
+/* Back link on service subpages */
+.services-back-link {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+
+.services-back-link a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.services-back-link a:hover {
+  color: var(--accent);
+}
+
 /* Graphic Design Services (from flyer) */
 .services-byline {
   color: var(--text-muted);
@@ -950,6 +1107,116 @@ body.page main {
 
 .service-category li {
   margin-bottom: 0.2rem;
+}
+
+/* Brand & Visual Strategy page (graphic-design.html) — premium layout */
+.brand-strategy-page .brand-strategy-lead {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: -0.25rem 0 2.5rem;
+  max-width: 40rem;
+}
+
+.brand-strategy-page .brand-build-heading {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand-strategy-page .brand-block {
+  margin-bottom: 2.25rem;
+}
+
+.brand-strategy-page .brand-block:last-of-type {
+  margin-bottom: 0;
+}
+
+.brand-strategy-page .brand-block-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 0.4rem;
+  line-height: 1.35;
+}
+
+.brand-strategy-page .brand-block-num {
+  color: var(--accent);
+  margin-right: 0.25rem;
+}
+
+.brand-strategy-page .brand-block-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0 0 0.75rem;
+  padding-left: 1.5rem;
+}
+
+.brand-strategy-page .brand-block-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.brand-strategy-page .brand-block-list li {
+  margin-bottom: 0.4rem;
+  position: relative;
+}
+
+.brand-strategy-page .brand-block-list li::before {
+  content: "•";
+  position: absolute;
+  left: -0.75rem;
+  color: var(--accent);
+}
+
+.brand-strategy-page .design-process {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.brand-strategy-page .design-process-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 1.25rem;
+}
+
+.brand-strategy-page .design-process-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: design-step;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.brand-strategy-page .design-process-list li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.85rem;
+  counter-increment: design-step;
+}
+
+.brand-strategy-page .design-process-list li::before {
+  content: counter(design-step);
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--accent);
 }
 
 .services-sidebar {
@@ -1059,6 +1326,40 @@ body.page main {
   margin: 0 0 1rem;
   font-size: 0.95rem;
   color: var(--text-muted);
+}
+
+.services-subtitle-small {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem;
+  color: var(--text);
+}
+
+.services-cta-wrap {
+  margin: 1rem 0;
+}
+
+.services-process-block {
+  margin-top: 1rem;
+}
+
+.services-process-list {
+  margin: 0 0 0 1.25rem;
+  padding-left: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.services-process-list li {
+  margin-bottom: 0.35rem;
+}
+
+.services-tagline {
+  font-weight: 600;
+  text-align: center;
+  color: var(--text);
+  font-size: 0.95rem;
 }
 
 .services-box-inquire {
@@ -1934,6 +2235,32 @@ body.page main {
 
 .footer-copyright span {
   display: inline;
+}
+
+/* Client Policy page (client-policy.html) */
+.client-terms { margin-top: 0; padding: 2rem 0; max-width: 42rem; margin-left: auto; margin-right: auto; }
+.client-terms-title { font-size: 1.05rem; font-weight: 700; letter-spacing: 0.05em; color: var(--accent); margin: 0 0 0.35rem; }
+.client-terms-subtitle { font-size: 0.95rem; color: var(--text-muted); margin: 0 0 2rem; }
+.client-terms-block { margin-bottom: 2.5rem; }
+.client-terms-block:last-child { margin-bottom: 0; }
+.client-terms-block-title { font-size: 1rem; font-weight: 700; color: var(--text); margin: 0 0 0.75rem; }
+.client-terms-block p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin: 0 0 0.5rem; }
+.client-terms-block ul { margin: 0.4rem 0 0; padding-left: 1.25rem; font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; }
+.client-terms-block ul li { margin-bottom: 0.35rem; }
+.client-terms-block .client-terms-sublist { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+.client-terms-divider { font-size: 1.25rem; color: var(--text-muted); margin: 2.5rem 0 1rem; letter-spacing: 0.2em; text-align: center; }
+.client-terms-confirm { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin: 0; font-style: italic; text-align: center; }
+.client-terms-back-wrap { margin: 1.25rem 0 0; }
+.btn-back-services {
+  background: var(--bg-card);
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+}
+.btn-back-services:hover {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
 }
 
 @media (max-width: 600px) {
