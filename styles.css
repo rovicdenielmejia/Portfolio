@@ -114,10 +114,44 @@ body {
   .portfolio-carousel-next,
   .btn,
   .nav-toggle,
-  .back-to-top {
+  .back-to-top,
+  .inquire-modal-close,
+  .inquire-form .btn,
+  input[type="submit"],
+  input[type="button"],
+  button {
     min-width: var(--touch-min);
     min-height: var(--touch-min);
   }
+  .nav-links a {
+    min-height: var(--touch-min);
+  }
+}
+
+/* Tablet & iPad – comfortable padding and layout */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding-left: max(2rem, var(--safe-left));
+    padding-right: max(2rem, var(--safe-right));
+  }
+  .section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: max(1.5rem, var(--safe-left));
+    padding-right: max(1.5rem, var(--safe-right));
+  }
+}
+
+/* Prevent horizontal overflow on all viewports */
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Keep all content aligned and within bounds on any viewport */
@@ -4356,7 +4390,28 @@ body.page main {
   margin-top: 0;
 }
 
-/* Inquire modal – mobile */
+/* Inquire modal – tablet & mobile */
+@media (max-width: 768px) {
+  .inquire-modal-box {
+    max-height: min(90vh, 90dvh);
+    padding: 1.5rem max(1.25rem, var(--safe-left)) max(1.5rem, calc(1.25rem + var(--safe-bottom))) max(1.25rem, var(--safe-right));
+    -webkit-overflow-scrolling: touch;
+  }
+  .inquire-modal-close {
+    width: 44px;
+    height: 44px;
+    min-width: var(--touch-min);
+    min-height: var(--touch-min);
+    top: 0.75rem;
+    right: max(0.75rem, var(--safe-right));
+  }
+  .inquire-modal-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-right: 3rem;
+  }
+}
+
 @media (max-width: 640px) {
   .inquire-modal {
     padding: max(0.5rem, var(--safe-top)) max(0.5rem, var(--safe-right)) max(0.5rem, var(--safe-bottom)) max(0.5rem, var(--safe-left));
@@ -4365,27 +4420,10 @@ body.page main {
 
   .inquire-modal-box {
     max-width: none;
-    max-height: min(90vh, 90dvh);
     width: 100%;
     margin: 0 auto;
     padding: 1.25rem max(1rem, var(--safe-left)) calc(1.25rem + var(--safe-bottom)) max(1rem, var(--safe-right));
     border-radius: 12px 12px 0 0;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .inquire-modal-close {
-    top: 0.75rem;
-    right: max(0.75rem, var(--safe-right));
-    width: 44px;
-    height: 44px;
-    min-width: var(--touch-min);
-    min-height: var(--touch-min);
-  }
-
-  .inquire-modal-title {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    padding-right: 3rem;
   }
 }
 
