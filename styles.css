@@ -1007,6 +1007,68 @@ body.page main {
   font-weight: 500;
 }
 
+/* Homepage testimonials – premium card style */
+.testimonials-premium .testimonials-premium-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(232, 168, 74, 0.25);
+  margin-bottom: 0.5rem;
+}
+.testimonials-grid-premium {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.testimonials-premium .testimonial-card {
+  margin: 0;
+  padding: 1.75rem 1.5rem;
+  border: none;
+  border-top: none;
+  background: linear-gradient(145deg, rgba(20, 20, 20, 0.98) 0%, rgba(14, 14, 14, 0.98) 100%);
+  border: 1px solid rgba(232, 168, 74, 0.25);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.testimonials-premium .testimonial-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.6;
+  border-radius: 12px 12px 0 0;
+}
+.testimonials-premium .testimonial-card:hover {
+  border-color: rgba(232, 168, 74, 0.4);
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.35);
+}
+.testimonials-premium .testimonial-card .testimonial-stars {
+  font-size: 1.05rem;
+  color: var(--accent);
+  margin: 0 0 0.85rem;
+  letter-spacing: 0.12em;
+}
+.testimonials-premium .testimonial-card .testimonial-quote {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--text);
+  margin: 0 0 1rem;
+}
+.testimonials-premium .testimonial-card .testimonial-attribution {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-style: normal;
+  margin: 0;
+}
+
 /* Portfolio: one testimonial per category */
 .portfolio-testimonial {
   margin: 2rem 0 0;
