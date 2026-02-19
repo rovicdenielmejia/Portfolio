@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#0d0d0d">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
@@ -25,13 +25,18 @@
   <link rel="stylesheet" href="styles.css?v=4">
   <style>
     .resume-section { padding: 2rem 0; }
-    .resume-section h1 { font-family: var(--font-display); color: var(--text); margin: 0 0 1rem; text-align: center; }
-    .resume-embed-wrap { width: 100%; max-width: 900px; margin: 0 auto 1rem; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--bg-card); }
-    .resume-embed-wrap iframe { display: block; width: 100%; height: 85vh; min-height: 600px; border: 0; }
-    .resume-actions { text-align: center; margin-top: 1rem; }
-    .resume-actions .btn { margin: 0 0.5rem 0.5rem 0; }
+    .resume-section h1 { font-family: var(--font-display); color: var(--text); margin: 0 0 1rem; text-align: center; font-size: clamp(1.5rem, 5vw, 2rem); }
+    .resume-embed-wrap { width: 100%; max-width: 900px; margin: 0 auto 1rem; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--bg-card); min-width: 0; }
+    .resume-embed-wrap iframe { display: block; width: 100%; height: 85vh; min-height: 500px; border: 0; }
+    .resume-actions { text-align: center; margin-top: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+    .resume-actions .btn { margin: 0; }
     @media (max-width: 640px) {
+      .resume-section { padding: 1.5rem 0; }
+      .resume-embed-wrap { margin-left: max(1rem, var(--safe-left)); margin-right: max(1rem, var(--safe-right)); }
       .resume-embed-wrap iframe { min-height: 70vh; }
+    }
+    @media (max-width: 380px) {
+      .resume-embed-wrap iframe { min-height: 60vh; }
     }
   </style>
 </head>
@@ -47,7 +52,7 @@
         <li class="nav-item-has-children">
           <a href="services">Services</a>
           <ul class="nav-dropdown">
-            <li><a href="graphic-design-packages">Brand &amp; Visual Strategy</a></li>
+            <li><a href="graphic-design">Brand &amp; Visual Strategy</a></li>
             <li><a href="hr-services">Workforce &amp; HR Strategy</a></li>
           </ul>
         </li>
