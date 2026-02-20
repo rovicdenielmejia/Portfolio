@@ -320,7 +320,7 @@ body.page main {
   align-items: center;
   gap: 0.5rem;
   font-family: var(--font-display);
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   color: var(--accent);
   text-decoration: none;
   letter-spacing: 0.02em;
@@ -473,7 +473,7 @@ body.page main {
 .split-title .title-bold {
   font-family: var(--font-body);
   font-weight: 800;
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
@@ -482,7 +482,7 @@ body.page main {
 .split-title .title-script {
   font-family: var(--font-script);
   font-weight: 400;
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   margin-left: 0.15em;
   color: var(--accent);
 }
@@ -889,7 +889,7 @@ main h1, main h2, main h3, main h4, main h5, main h6 {
 
 .section-title {
   margin: 0 0 2rem;
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   color: var(--accent);
 }
 
@@ -1188,7 +1188,7 @@ main:has(.section-home) .premium-divider {
   margin: 0;
 }
 .pillar-card-title {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--text);
   margin: 0 0 0.75rem;
@@ -1205,7 +1205,7 @@ main:has(.section-home) .premium-divider {
 }
 
 .section-title-home {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--accent);
@@ -1213,7 +1213,7 @@ main:has(.section-home) .premium-divider {
   text-align: center;
 }
 .section-featured .section-title-home {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   margin-bottom: 1.25rem;
 }
 .featured-grid {
@@ -1499,7 +1499,7 @@ main:has(.section-home) .premium-divider {
 }
 .section-faq .section-title-home {
   margin-bottom: 0.5rem;
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--accent);
   text-align: center;
@@ -1811,7 +1811,7 @@ main:has(.section-home) .premium-divider {
   margin: 0 0 0.25rem;
 }
 .about-hero-title {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--accent);
   margin: 0 0 0.5rem;
@@ -1923,7 +1923,7 @@ main:has(.section-home) .premium-divider {
   margin: 0 0 0.75rem;
 }
 .about-direct-name {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--text);
   margin: 0 0 0.2rem;
@@ -2056,7 +2056,7 @@ main:has(.section-home) .premium-divider {
 }
 
 .about-content .lead {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   color: var(--text);
   margin-bottom: 1rem;
 }
@@ -2245,7 +2245,7 @@ main:has(.section-home) .premium-divider {
 
 .expertise-section-title {
   font-family: var(--font-display);
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 400;
   color: var(--accent);
   margin: 0 0 1rem;
@@ -2633,7 +2633,7 @@ main:has(.section-home) .premium-divider {
 
 .services-overview-title {
   margin: 0;
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -2923,7 +2923,7 @@ main:has(.section-home) .premium-divider {
 }
 
 .hr-services-page .services-subtitle {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -3623,7 +3623,7 @@ main:has(.section-home) .premium-divider {
 
 .hr-package-page .hr-package-tagline {
   text-align: center;
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 0.03em;
   color: var(--accent);
@@ -3752,7 +3752,7 @@ main:has(.section-home) .premium-divider {
 }
 
 .hr-package-section-title {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--accent);
@@ -3840,7 +3840,7 @@ main:has(.section-home) .premium-divider {
 }
 
 .services-subtitle {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -4466,7 +4466,7 @@ main:has(.section-home) .premium-divider {
 
 .portfolio-curated-section-title {
   font-family: var(--font-body);
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--accent);
@@ -4476,7 +4476,7 @@ main:has(.section-home) .premium-divider {
 
 .portfolio-curated-title {
   font-family: var(--font-body);
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.02em;
   color: var(--accent);
@@ -4492,9 +4492,9 @@ main:has(.section-home) .premium-divider {
 .portfolio-curated-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.75rem;
+  gap: 0.94rem;
   width: 100%;
-  max-width: 52rem;
+  max-width: 65rem;
   margin-left: auto;
   margin-right: auto;
   min-width: 0;
@@ -4549,6 +4549,11 @@ main:has(.section-home) .premium-divider {
 /* Portfolio category gallery pages (View More landing) */
 .portfolio-category-page .section-title.split-title {
   justify-content: center;
+  font-size: 1.85rem;
+}
+.portfolio-category-page .section-title.split-title .title-bold,
+.portfolio-category-page .section-title.split-title .title-script {
+  font-size: 1.85rem;
 }
 .portfolio-category-page .portfolio-category-page-caption {
   font-size: 1rem;
@@ -4569,9 +4574,9 @@ main:has(.section-home) .premium-divider {
 /* Premium category carousel (no duplicates across categories) */
 .portfolio-carousel-wrap {
   position: relative;
-  max-width: 640px;
-  margin: 0 auto 1.5rem;
-  padding: 0 2.5rem;
+  max-width: 800px;
+  margin: 0 auto 1.875rem;
+  padding: 0 3.125rem;
 }
 .portfolio-carousel {
   position: relative;
@@ -4585,7 +4590,7 @@ main:has(.section-home) .premium-divider {
   overflow: hidden;
   width: 100%;
   aspect-ratio: 4/3;
-  max-height: 50vh;
+  max-height: 62.5vh;
 }
 .portfolio-carousel-track {
   display: flex;
@@ -4598,7 +4603,7 @@ main:has(.section-home) .premium-divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.85rem;
+  padding: 1.06rem;
   box-sizing: border-box;
 }
 .portfolio-carousel-slide img {
@@ -4664,30 +4669,30 @@ main:has(.section-home) .premium-divider {
 }
 @media (max-width: 768px) {
   .portfolio-carousel-wrap {
-    padding: 0 2.25rem;
-    max-width: 88vw;
+    padding: 0 2.8rem;
+    max-width: 92vw;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
   }
   .portfolio-carousel {
     border-radius: 12px;
     box-shadow: 0 14px 36px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.06);
   }
-  .portfolio-carousel-viewport { aspect-ratio: 3/4; max-height: 48vh; }
+  .portfolio-carousel-viewport { aspect-ratio: 3/4; max-height: 60vh; }
   .portfolio-carousel-prev,
   .portfolio-carousel-next { width: 40px; height: 40px; min-width: var(--touch-min); min-height: var(--touch-min); }
   .portfolio-carousel-prev { left: 0.3rem; }
   .portfolio-carousel-next { right: 0.3rem; }
-  .portfolio-carousel-slide { padding: 0.6rem; }
+  .portfolio-carousel-slide { padding: 0.75rem; }
   .portfolio-carousel-slide img { border-radius: 8px; }
 }
 
 @media (max-width: 480px) {
   .portfolio-carousel-wrap {
-    padding: 0 2rem;
-    margin-bottom: 1rem;
-    max-width: 88vw;
+    padding: 0 2.5rem;
+    margin-bottom: 1.25rem;
+    max-width: 92vw;
     margin-left: auto;
     margin-right: auto;
   }
@@ -4695,8 +4700,8 @@ main:has(.section-home) .premium-divider {
     border-radius: 12px;
     box-shadow: 0 14px 36px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.06);
   }
-  .portfolio-carousel-viewport { aspect-ratio: 3/4; max-height: 44vh; }
-  .portfolio-carousel-slide { padding: 0.6rem; }
+  .portfolio-carousel-viewport { aspect-ratio: 3/4; max-height: 55vh; }
+  .portfolio-carousel-slide { padding: 0.75rem; }
   .portfolio-carousel-slide img { border-radius: 8px; }
   .portfolio-carousel-prev,
   .portfolio-carousel-next { width: 40px; height: 40px; min-width: 40px; min-height: 40px; }
@@ -4720,15 +4725,15 @@ main:has(.section-home) .premium-divider {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-  .portfolio-carousel-wrap { max-width: 560px; padding: 0 2.5rem; }
-  .portfolio-carousel-viewport { max-height: 48vh; }
+  .portfolio-carousel-wrap { max-width: 700px; padding: 0 3.125rem; }
+  .portfolio-carousel-viewport { max-height: 60vh; }
 }
 
 @media (max-width: 800px) {
   .portfolio-curated-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.65rem;
-    max-width: 36rem;
+    gap: 0.85rem;
+    max-width: 45rem;
   }
   .portfolio-curated .portfolio-curated-section {
     margin-bottom: 2rem;
@@ -4739,7 +4744,7 @@ main:has(.section-home) .premium-divider {
 }
 @media (max-width: 480px) {
   .portfolio-curated-title {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
   }
   .portfolio-curated-caption {
     font-size: 0.9rem;
@@ -4767,9 +4772,9 @@ main:has(.section-home) .premium-divider {
 .portfolio-featured-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.85rem;
+  gap: 1.06rem;
   width: 100%;
-  max-width: 52rem;
+  max-width: 65rem;
   margin-left: auto;
   margin-right: auto;
   min-width: 0;
@@ -4821,15 +4826,15 @@ main:has(.section-home) .premium-divider {
 @media (max-width: 800px) {
   .portfolio-featured-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-    max-width: 36rem;
+    gap: 0.94rem;
+    max-width: 45rem;
   }
 }
 @media (max-width: 480px) {
   .portfolio-featured-grid {
     grid-template-columns: 1fr;
-    gap: 0.65rem;
-    max-width: 28rem;
+    gap: 0.81rem;
+    max-width: 35rem;
   }
   .portfolio-highlights .portfolio-highlights-intro {
     margin-bottom: 2.5rem;
@@ -4900,12 +4905,15 @@ main:has(.section-home) .premium-divider {
 
 .portfolio-category-title {
   font-family: var(--font-body);
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--accent);
   margin: 0 0 1rem;
   padding-bottom: 0.5rem;
+}
+.portfolio-category-page .portfolio-category-title {
+  font-size: 1.75rem;
 }
 
 .gallery-item-more {
@@ -5108,7 +5116,7 @@ main:has(.section-home) .premium-divider {
 .universal-cta .container { max-width: 36rem; margin: 0 auto; }
 .universal-cta-headline {
   font-family: var(--font-display);
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--accent);
   margin: 0 0 0.5rem;
@@ -5207,7 +5215,7 @@ body.policy-modal-view .universal-cta { display: none !important; }
 
 .inquire-modal-title {
   font-family: var(--font-display);
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 400;
   color: var(--accent);
   margin: 0 0 0.5rem;
@@ -5269,7 +5277,7 @@ body.policy-modal-view .universal-cta { display: none !important; }
     right: max(0.75rem, var(--safe-right));
   }
   .inquire-modal-title {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     padding-right: 3rem;
   }
@@ -5846,7 +5854,7 @@ body.policy-modal-view .universal-cta { display: none !important; }
 }
 
 .contact-rovic-name {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--text);
   margin: 0 0 0.25rem;
@@ -6672,11 +6680,11 @@ body.policy-modal-view .universal-cta { display: none !important; }
   }
 
   .section-title.split-title .title-bold {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
   }
 
   .section-title.split-title .title-script {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
   }
 
   .logo {
@@ -6769,7 +6777,7 @@ body.policy-modal-view .universal-cta { display: none !important; }
   }
 
   .portfolio-category-title {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
   }
 
   .gallery {
@@ -6810,6 +6818,6 @@ pre {
 }
 
 @media (min-width: 601px) and (max-width: 900px) {
-  .section-title.split-title .title-bold { font-size: 1.35rem; }
+  .section-title.split-title .title-bold { font-size: 1.5rem; }
   .portfolio-carousel-wrap { margin-left: auto; margin-right: auto; }
 }
