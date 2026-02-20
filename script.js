@@ -63,6 +63,20 @@
     window.addEventListener('resize', closeNavIfDesktop);
   }
 
+  // FAQ accordion: only one open at a time
+  document.querySelectorAll('.faq-list').forEach(function (list) {
+    var items = list.querySelectorAll('[data-faq-item]');
+    items.forEach(function (item) {
+      item.addEventListener('toggle', function () {
+        if (item.open) {
+          items.forEach(function (other) {
+            if (other !== item) other.removeAttribute('open');
+          });
+        }
+      });
+    });
+  });
+
   // Lightbox for gallery (works with multiple .gallery sections)
   var lightbox = document.getElementById('lightbox');
   var lightboxImg = lightbox ? lightbox.querySelector('img') : null;
@@ -162,4 +176,38 @@
       btn.textContent = category.classList.contains('is-expanded') ? 'See less' : 'See more';
     });
   });
+
+  // Premium: scroll-reveal – add .animate-on-scroll to sections/cards then observe
+  var revealSelectors = [
+    '.section', '.section-home', '.hero', '.hero-home', '.section-faq',
+    '.featured-item', '.testimonial-card', '.expertise-card', '.services-overview-card',
+    '.services-pillar-card', '.hr-services-list-card', '.tools-platforms-col',
+    '.faq-item', '.about-preview-card', '.contact-form-wrap', '.page-header',
+    '.portfolio-category', '.gallery', '.content-main > h2', '.content-main > h3'
+  ];
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion) {
+    revealSelectors.forEach(function (sel) {
+      try {
+        document.querySelectorAll(sel).forEach(function (el, i) {
+          if (el.closest('.animate-on-scroll')) return;
+          el.classList.add('animate-on-scroll');
+          if (i % 4 === 1) el.classList.add('animate-on-scroll-delay-1');
+          if (i % 4 === 2) el.classList.add('animate-on-scroll-delay-2');
+          if (i % 4 === 3) el.classList.add('animate-on-scroll-delay-3');
+        });
+      } catch (e) {}
+    });
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) entry.target.classList.add('is-visible');
+        });
+      },
+      { rootMargin: '0px 0px -60px 0px', threshold: 0.05 }
+    );
+    document.querySelectorAll('.animate-on-scroll').forEach(function (el) {
+      observer.observe(el);
+    });
+  }
 })();
