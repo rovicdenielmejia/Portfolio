@@ -8,11 +8,11 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Graphic Design Packages | Rovic Mejia Portfolio</title>
+  <title>Graphic Design Packages | Rovic Mejia</title>
   <link rel="canonical" href="https://rovicmejiaportfolio.com/graphic-design-packages">
   <meta property="og:url" content="https://rovicmejiaportfolio.com/graphic-design-packages">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Graphic Design Packages | Rovic Mejia Portfolio">
+  <meta property="og:title" content="Graphic Design Packages | Rovic Mejia">
   <meta property="og:image" content="https://rovicmejiaportfolio.com/Portfolio/Carricature.png">
   <meta property="og:image:secure_url" content="https://rovicmejiaportfolio.com/Portfolio/Carricature.png">
   <meta property="og:image:type" content="image/png">
@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=5">
   <style>
     .pricing-section { padding: 2rem 0; }
     .brand-pricing-header { text-align: center; margin-bottom: 2rem; }
@@ -53,7 +53,7 @@
     .brand-pricing-block-secondary .brand-pricing-block-intro { opacity: 0.88; color: var(--text-muted); }
     .brand-pricing-block-secondary .pricing-card.pricing-card-recommended { border-color: var(--accent); background: var(--bg-card); box-shadow: 0 0 0 1px var(--accent); }
     .brand-pricing-block-title { font-size: 0.9rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
-    .brand-pricing-block-intro { font-size: 0.95rem; color: var(--text-muted); line-height: 1.55; margin: 0 0 1.5rem; max-width: 36rem; }
+    .brand-pricing-block-intro { font-size: 0.95rem; color: var(--text-muted); line-height: 1.55; margin: 0 auto 1.5rem; max-width: 36rem; text-align: center; }
     .brand-pricing-divider { height: 1px; background: var(--border); margin: 2.5rem 0; }
     .brand-pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 0; }
     .pricing-card { background: var(--bg-card); border: 2px solid var(--border); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; }
@@ -74,6 +74,15 @@
     .pricing-actions { text-align: center; margin-top: 2.5rem; }
     .pricing-actions .btn { margin: 0 0.5rem 0.5rem 0; }
     @media (max-width: 900px) { .brand-pricing-grid { grid-template-columns: 1fr; } }
+    /* Tabs per category */
+    .packages-tabs-wrap { margin: 2rem 0 0; }
+    .packages-tablist { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin: 0 0 1.5rem; padding: 0; list-style: none; border-bottom: 1px solid var(--border); }
+    .packages-tablist li { margin: 0; }
+    .packages-tablist [role="tab"] { display: inline-block; padding: 0.6rem 1rem; font-size: 0.9rem; font-weight: 600; color: var(--text-muted); background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; font-family: inherit; margin-bottom: -1px; border-radius: 6px 6px 0 0; transition: color 0.2s, border-color 0.2s, background 0.2s; }
+    .packages-tablist [role="tab"]:hover { color: var(--text); }
+    .packages-tablist [role="tab"][aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent); background: var(--bg-card); }
+    .packages-tabpanel { display: none; }
+    .packages-tabpanel[aria-hidden="false"] { display: block; }
     .payment-terms-short { margin-top: 4rem; padding-top: 2.5rem; max-width: 28rem; margin-left: auto; margin-right: auto; text-align: center; }
     .payment-terms-divider { font-size: 1.25rem; color: var(--text-muted); margin: 0 0 1rem; letter-spacing: 0.2em; }
     .payment-terms-heading { font-size: 0.9rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 0.75rem; }
@@ -114,7 +123,18 @@
             <li><a href="hr-services">Workforce &amp; HR Strategy</a></li>
           </ul>
         </li>
-        <li><a href="portfolio">Portfolio</a></li>
+        <li class="nav-item-has-children">
+          <a href="portfolio">Portfolio</a>
+          <ul class="nav-dropdown">
+            <li><a href="portfolio">Portfolio Highlights</a></li>
+            <li><a href="portfolio-brand-identity">Brand Identity &amp; Logo Systems</a></li>
+            <li><a href="portfolio-marketing">Marketing &amp; Campaign Visuals</a></li>
+            <li><a href="portfolio-social">Social Media Visual Systems</a></li>
+            <li><a href="portfolio-event">Event &amp; Pageant Creative</a></li>
+            <li><a href="portfolio-print">Print &amp; Collateral Layouts</a></li>
+            <li><a href="portfolio-specialized">Specialized Creative Work</a></li>
+          </ul>
+        </li>
         <li><a href="contact">Contact</a></li>
         <li class="nav-item-has-children">
           <a href="about">About</a>
@@ -124,6 +144,7 @@
             <li><a href="certification">Certifications</a></li>
           </ul>
         </li>
+        <li><a href="frequently-ask-questions.html">FAQ</a></li>
       </ul>
     </nav>
   </header>
@@ -147,9 +168,35 @@
 
         <p class="brand-identity-lead">Every strong business begins with a structured brand identity.</p>
 
-        <!-- 1. BRAND IDENTITY SYSTEMS -->
-        <div class="brand-pricing-block brand-pricing-block-primary">
-          <h2 class="brand-pricing-block-title">1. Brand Identity Systems</h2>
+        <p class="signature-offer-divider" aria-hidden="true">—</p>
+        <div class="signature-offer">
+          <p class="signature-offer-title">Signature Offer</p>
+          <p class="signature-offer-name">Business Brand System</p>
+          <p class="signature-offer-desc">A complete brand foundation for businesses ready to look established and operate with consistency.</p>
+          <p class="signature-offer-value">Best value for growing businesses</p>
+          <p class="signature-offer-price">₱12,000 – ₱18,000</p>
+          <h4>Includes</h4>
+          <ul>
+            <li>Brand Identity Pro</li>
+            <li>12 Social Templates</li>
+            <li>Website Hero Graphics</li>
+            <li>Print Layout</li>
+          </ul>
+          <div class="signature-offer-cta">
+            <button type="button" class="btn btn-primary packages-inquire-btn" data-inquire-subject="Package Inquiry: Business Brand System (Signature Offer)" data-inquire-title="Request This Package">Request This Package</button>
+          </div>
+        </div>
+
+        <div class="packages-tabs-wrap">
+          <ul class="packages-tablist" role="tablist" aria-label="Package categories">
+            <li><button type="button" role="tab" id="tab-brand" aria-selected="true" aria-controls="panel-brand" data-packages-tab>Brand Identity</button></li>
+            <li><button type="button" role="tab" id="tab-social" aria-selected="false" aria-controls="panel-social" data-packages-tab>Social Media</button></li>
+            <li><button type="button" role="tab" id="tab-marketing" aria-selected="false" aria-controls="panel-marketing" data-packages-tab>Marketing &amp; Campaign</button></li>
+            <li><button type="button" role="tab" id="tab-website" aria-selected="false" aria-controls="panel-website" data-packages-tab>Website Visuals</button></li>
+          </ul>
+
+          <!-- 1. BRAND IDENTITY SYSTEMS -->
+          <div class="packages-tabpanel brand-pricing-block brand-pricing-block-primary" id="panel-brand" role="tabpanel" aria-labelledby="tab-brand" aria-hidden="false">
           <p class="brand-pricing-block-intro">Your brand identity is the foundation of how your business is perceived. Build credibility before you scale.</p>
           <div class="brand-pricing-grid">
             <div class="pricing-card">
@@ -190,32 +237,10 @@
               </div>
             </div>
           </div>
-        </div>
-
-        <p class="signature-offer-divider" aria-hidden="true">—</p>
-        <div class="signature-offer">
-          <p class="signature-offer-title">Signature Offer</p>
-          <p class="signature-offer-name">Business Brand System</p>
-          <p class="signature-offer-desc">A complete brand foundation for businesses ready to look established and operate with consistency.</p>
-          <p class="signature-offer-value">Best value for growing businesses</p>
-          <p class="signature-offer-price">₱12,000 – ₱18,000</p>
-          <h4>Includes</h4>
-          <ul>
-            <li>Brand Identity Pro</li>
-            <li>12 Social Templates</li>
-            <li>Website Hero Graphics</li>
-            <li>Print Layout</li>
-          </ul>
-          <div class="signature-offer-cta">
-            <button type="button" class="btn btn-primary packages-inquire-btn" data-inquire-subject="Package Inquiry: Business Brand System (Signature Offer)" data-inquire-title="Request This Package">Request This Package</button>
           </div>
-        </div>
 
-        <div class="brand-pricing-divider" aria-hidden="true"></div>
-
-        <!-- 2. SOCIAL MEDIA VISUAL SYSTEMS -->
-        <div class="brand-pricing-block brand-pricing-block-secondary">
-          <h2 class="brand-pricing-block-title">2. Social Media Visual Systems</h2>
+          <!-- 2. SOCIAL MEDIA VISUAL SYSTEMS -->
+          <div class="packages-tabpanel brand-pricing-block brand-pricing-block-secondary" id="panel-social" role="tabpanel" aria-labelledby="tab-social" aria-hidden="true">
           <p class="brand-pricing-block-intro">Consistency builds recognition. Recognition builds trust.</p>
           <div class="brand-pricing-grid">
             <div class="pricing-card">
@@ -253,13 +278,10 @@
               </div>
             </div>
           </div>
-        </div>
+          </div>
 
-        <div class="brand-pricing-divider" aria-hidden="true"></div>
-
-        <!-- 3. MARKETING & CAMPAIGN CREATIVE -->
-        <div class="brand-pricing-block brand-pricing-block-secondary">
-          <h2 class="brand-pricing-block-title">3. Marketing &amp; Campaign Creative</h2>
+          <!-- 3. MARKETING & CAMPAIGN CREATIVE -->
+          <div class="packages-tabpanel brand-pricing-block brand-pricing-block-secondary" id="panel-marketing" role="tabpanel" aria-labelledby="tab-marketing" aria-hidden="true">
           <p class="brand-pricing-block-intro">High-impact visuals designed to attract attention and drive action.</p>
           <div class="brand-pricing-grid">
             <div class="pricing-card">
@@ -297,13 +319,10 @@
               </div>
             </div>
           </div>
-        </div>
+          </div>
 
-        <div class="brand-pricing-divider" aria-hidden="true"></div>
-
-        <!-- 4. WEBSITE VISUAL SYSTEMS -->
-        <div class="brand-pricing-block brand-pricing-block-secondary">
-          <h2 class="brand-pricing-block-title">4. Website Visual Systems</h2>
+          <!-- 4. WEBSITE VISUAL SYSTEMS -->
+          <div class="packages-tabpanel brand-pricing-block brand-pricing-block-secondary" id="panel-website" role="tabpanel" aria-labelledby="tab-website" aria-hidden="true">
           <p class="brand-pricing-block-intro">Elevate your website with structured visual direction.</p>
           <div class="brand-pricing-grid">
             <div class="pricing-card">
@@ -341,6 +360,8 @@
               </div>
             </div>
           </div>
+          </div>
+
         </div>
 
         <div class="payment-terms-short">
@@ -353,23 +374,82 @@
             <li>Downpayments are non-refundable</li>
           </ul>
           <p class="payment-terms-link-wrap">
-            <a href="client-policy" class="payment-terms-link">View Full Client Policy →</a>
+            <a href="client-policy.html" class="payment-terms-link js-open-policy-modal">View Full Client Policy →</a>
           </p>
         </div>
       </div>
     </section>
-    <div class="back-to-services-bar">
-      <div class="container">
-        <a href="services" class="btn btn-back-services">Back to Services</a>
-      </div>
-    </div>
   </main>
+
+  <section class="universal-cta" aria-label="Call to action">
+    <div class="container">
+      <h2 class="universal-cta-headline">Ready to Get Started?</h2>
+      <p class="universal-cta-subtitle">Let’s confirm the right engagement model for your business.</p>
+      <button type="button" class="btn btn-primary services-inquire-btn" data-inquire-subject="Graphic Design Package Inquiry - TechPrint Core" data-inquire-title="Book a Strategic Consultation" data-inquire-to="rovicdenielmejia@gmail.com" data-inquire-page-type="Brand Strategy">Book a consultation</button>
+    </div>
+  </section>
+
+  <div id="start-project-modal" class="inquire-modal" role="dialog" aria-modal="true" aria-labelledby="start-project-modal-title" aria-hidden="true">
+    <div class="inquire-modal-backdrop" tabindex="-1"></div>
+    <div class="inquire-modal-box">
+      <button type="button" class="inquire-modal-close" aria-label="Close">×</button>
+      <h2 id="start-project-modal-title" class="inquire-modal-title">Start a Project</h2>
+      <p class="contact-form-subtitle" style="margin:0 0 1rem; font-size:0.95rem; color:var(--text-muted);">Send a message to get started.</p>
+      <form id="start-project-form" class="inquire-form" aria-label="Start a project form">
+        <div class="inquire-form-row">
+          <label for="start-project-name">Name <span class="required">*</span></label>
+          <input type="text" id="start-project-name" name="name" required placeholder="Your full name" autocomplete="name">
+        </div>
+        <div class="inquire-form-row">
+          <label for="start-project-email">Email <span class="required">*</span></label>
+          <input type="email" id="start-project-email" name="email" required placeholder="your@email.com" autocomplete="email">
+        </div>
+        <div class="inquire-form-row">
+          <label for="start-project-phone">Phone Number <span class="required">*</span></label>
+          <input type="tel" id="start-project-phone" name="phone" required placeholder="e.g. 09171234567" autocomplete="tel" inputmode="numeric" pattern="[0-9]*" title="Numbers only">
+        </div>
+        <div class="inquire-form-row">
+          <label for="start-project-company">Company <span class="contact-optional">(Optional)</span></label>
+          <input type="text" id="start-project-company" name="company" placeholder="Your company name" autocomplete="organization">
+        </div>
+        <div class="inquire-form-row">
+          <label for="start-project-type">Project Type <span class="required">*</span></label>
+          <select id="start-project-type" name="project_type" required aria-required="true">
+            <option value="" disabled selected>Select project type</option>
+            <option value="Brand Identity">Brand Identity</option>
+            <option value="Social Media Visual System">Social Media Visual System</option>
+            <option value="Marketing Creative">Marketing Creative</option>
+            <option value="Website Graphics">Website Graphics</option>
+            <option value="HR Consultation">HR Consultation</option>
+            <option value="Recruitment Support">Recruitment Support</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="inquire-form-row">
+          <label for="start-project-message">Message <span class="required">*</span></label>
+          <textarea id="start-project-message" name="message" required rows="5" placeholder="Tell us about your project or inquiry..."></textarea>
+        </div>
+        <div class="inquire-form-row privacy-checkbox-row">
+          <label class="privacy-checkbox-label">
+            <input type="checkbox" name="privacy_agreement" required>
+            <span>I agree to the <a href="privacy-policy.html" class="js-open-policy-modal">Privacy Policy</a>, <a href="terms-of-service.html" class="js-open-policy-modal">Terms of Service</a></span>
+          </label>
+        </div>
+        <div class="inquire-form-actions">
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </div>
+        <p class="contact-form-note">I typically respond within 24–48 hours. Your message will open in your email app and be sent to the address for the project type you selected.</p>
+      </form>
+    </div>
+  </div>
 
   <div id="inquire-modal" class="inquire-modal" role="dialog" aria-modal="true" aria-labelledby="inquire-modal-title" aria-hidden="true">
     <div class="inquire-modal-backdrop" tabindex="-1"></div>
     <div class="inquire-modal-box">
       <button type="button" class="inquire-modal-close" aria-label="Close">×</button>
-      <h2 id="inquire-modal-title" class="inquire-modal-title">Inquire</h2>
+      <h2 id="inquire-modal-title" class="inquire-modal-title">Book a Strategic Consultation</h2>
+      <p class="inquire-modal-subtext">Provide the necessary details so we can assess your requirements and recommend the right engagement model.</p>
+      <p class="inquire-modal-how-to">Note: Incomplete submissions may delay consultation scheduling.</p>
       <form id="inquire-modal-form" class="inquire-form service-inquire-form" aria-label="Inquiry form">
         <input type="hidden" name="subject" value="">
         <div class="inquire-form-row">
@@ -392,13 +472,18 @@
         <div class="inquire-form-row privacy-checkbox-row">
           <label class="privacy-checkbox-label">
             <input type="checkbox" name="privacy_agreement" required>
-            <span>I agree to the <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a> &amp; <a href="terms-of-service.html" target="_blank" rel="noopener">Terms</a>. (<a href="client-policy.html" target="_blank" rel="noopener">Client Policy</a>)</span>
+            <span>I agree to the <a href="privacy-policy.html" class="js-open-policy-modal">Privacy Policy</a>, <a href="terms-of-service.html" class="js-open-policy-modal">Terms of Service</a></span>
           </label>
         </div>
         <div class="inquire-form-actions">
           <button type="submit" class="btn btn-primary">Send inquiry</button>
         </div>
       </form>
+      <div class="inquire-modal-after-form">
+        <p>All inquiries are handled confidentially.</p>
+        <p>A response will be provided within 24–48 business hours.</p>
+        <p>Submission does not automatically confirm engagement.</p>
+      </div>
     </div>
   </div>
 
@@ -420,6 +505,7 @@
             <a href="portfolio">Portfolio</a>
             <a href="contact">Contact</a>
             <a href="about">About</a>
+            <a href="frequently-ask-questions.html">FAQ</a>
           </nav>
         </div>
         <div class="footer-col footer-col-connect">
@@ -438,9 +524,9 @@
       <div class="footer-bottom footer-bottom-premium">
         <span class="footer-copyright">© 2026 Rovic Mejia. All Rights Reserved.</span>
         <div class="footer-legal-wrap">
-          <a href="terms-of-service.html">Terms of Service</a>
+          <a href="terms-of-service.html" class="js-open-policy-modal">Terms of Service</a>
           <span class="footer-legal-divider">|</span>
-          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="privacy-policy.html" class="js-open-policy-modal">Privacy Policy</a>
         </div>
       </div>
     </div>
@@ -497,6 +583,13 @@
             openModal(title, subj, this);
           });
         });
+        document.querySelectorAll('.services-inquire-btn').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var title = this.getAttribute('data-inquire-title') || 'Book a Consultation';
+            var subj = this.getAttribute('data-inquire-subject') || '';
+            openModal(title, subj, this);
+          });
+        });
 
         if (modalForm) {
           var phoneInput = modalForm.querySelector('input[name="phone"]');
@@ -524,6 +617,32 @@
       }
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initPackagesInquire);
       else initPackagesInquire();
+    })();
+
+    (function() {
+      function initPackagesTabs() {
+        var tabs = document.querySelectorAll('[data-packages-tab]');
+        var panels = document.querySelectorAll('.packages-tabpanel');
+        if (!tabs.length || !panels.length) return;
+        function showPanel(panelId) {
+          panels.forEach(function(p) {
+            var hide = p.id !== panelId;
+            p.setAttribute('aria-hidden', hide);
+          });
+          tabs.forEach(function(t) {
+            var id = t.getAttribute('aria-controls');
+            t.setAttribute('aria-selected', id === panelId);
+          });
+        }
+        tabs.forEach(function(tab) {
+          tab.addEventListener('click', function() {
+            var panelId = this.getAttribute('aria-controls');
+            if (panelId) showPanel(panelId);
+          });
+        });
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initPackagesTabs);
+      else initPackagesTabs();
     })();
   </script>
 </body>

@@ -183,7 +183,9 @@
     '.featured-item', '.testimonial-card', '.expertise-card', '.services-overview-card',
     '.services-pillar-card', '.hr-services-list-card', '.tools-platforms-col',
     '.faq-item', '.about-preview-card', '.contact-form-wrap', '.page-header',
-    '.portfolio-category', '.gallery', '.content-main > h2', '.content-main > h3'
+    '.portfolio-category', '.gallery', '.content-main > h2', '.content-main > h3',
+    '.section-title', '.faq-page-tabs', '.faq-page-panel', '.faq-page-cta',
+    '.block-cta', '.content-main > p', '.team-card', '.process-step'
   ];
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!reduceMotion) {
@@ -210,4 +212,142 @@
       observer.observe(el);
     });
   }
+
+  // Start a Project modal (home + contact CTA)
+  var startProjectModal = document.getElementById('start-project-modal');
+  var startProjectForm = document.getElementById('start-project-form');
+  if (startProjectModal && startProjectForm) {
+    function getStartProjectRecipient(projectType) {
+      if (!projectType) return 'rovicdenielmejia@gmail.com';
+      var hrTypes = ['HR Consultation', 'Recruitment Support'];
+      var creativeTypes = ['Brand Identity', 'Social Media Visual System', 'Marketing Creative', 'Website Graphics'];
+      if (hrTypes.indexOf(projectType) !== -1) return 'wrs.workforce.hr@gmail.com';
+      if (creativeTypes.indexOf(projectType) !== -1) return 'techprintcoreph@gmail.com';
+      return 'rovicdenielmejia@gmail.com';
+    }
+    function openStartProjectModal() {
+      var params = new URLSearchParams(window.location.search);
+      var type = params.get('type');
+      var select = startProjectForm.elements.project_type;
+      if (type && select) {
+        var opt = Array.prototype.find.call(select.options, function (o) { return o.value === type; });
+        if (opt) select.value = type;
+      }
+      startProjectModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      var first = startProjectModal.querySelector('.inquire-modal-close') || startProjectForm.querySelector('input, select, textarea, button');
+      if (first) first.focus();
+    }
+    function closeStartProjectModal() {
+      startProjectModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    document.querySelectorAll('[data-open-start-project], .js-open-start-project').forEach(function (trigger) {
+      trigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        openStartProjectModal();
+      });
+    });
+    if (window.location.hash === '#start-project') {
+      openStartProjectModal();
+    }
+    var closeBtn = startProjectModal.querySelector('.inquire-modal-close');
+    var backdrop = startProjectModal.querySelector('.inquire-modal-backdrop');
+    if (closeBtn) closeBtn.addEventListener('click', closeStartProjectModal);
+    if (backdrop) backdrop.addEventListener('click', closeStartProjectModal);
+    startProjectModal.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeStartProjectModal();
+    });
+    var phoneInput = startProjectForm.elements.phone;
+    if (phoneInput) {
+      phoneInput.addEventListener('input', function () { this.value = this.value.replace(/[^0-9]/g, ''); });
+      phoneInput.addEventListener('paste', function (e) {
+        e.preventDefault();
+        var pasted = (e.clipboardData || window.clipboardData).getData('text').replace(/[^0-9]/g, '');
+        var start = this.selectionStart, end = this.selectionEnd;
+        this.value = this.value.slice(0, start) + pasted + this.value.slice(end);
+        this.setSelectionRange(start + pasted.length, start + pasted.length);
+      });
+    }
+    startProjectForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var el = startProjectForm.elements;
+      var name = (el.name && el.name.value) ? el.name.value.trim() : '';
+      var projectType = (el.project_type && el.project_type.value) ? el.project_type.value.trim() : 'Other';
+      var to = getStartProjectRecipient(projectType);
+      var subject = 'Inquiry: ' + projectType + ' - ' + (name || 'Contact');
+      var body = [];
+      if (name) body.push('Name: ' + name);
+      if (el.email && el.email.value) body.push('Email: ' + el.email.value.trim());
+      if (el.phone && el.phone.value) body.push('Phone: ' + el.phone.value.trim());
+      if (el.company && el.company.value && el.company.value.trim()) body.push('Company: ' + el.company.value.trim());
+      body.push('Project Type: ' + projectType);
+      body.push('');
+      if (el.message && el.message.value) body.push(el.message.value.trim());
+      var bodyStr = body.join('\n');
+      var maxBodyLen = 1200;
+      if (bodyStr.length > maxBodyLen) bodyStr = bodyStr.slice(0, maxBodyLen) + '\n\n[... message truncated ...]';
+      var a = document.createElement('a');
+      a.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(bodyStr);
+      a.style.display = 'none';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      closeStartProjectModal();
+    });
+  }
+
+  // Policy viewer modal (Privacy, Terms, HR Client Policy) – open in modal, no nav/full footer
+  (function () {
+    var modal = document.getElementById('policy-viewer-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'policy-viewer-modal';
+      modal.setAttribute('role', 'dialog');
+      modal.setAttribute('aria-modal', 'true');
+      modal.setAttribute('aria-label', 'Policy document');
+      modal.setAttribute('aria-hidden', 'true');
+      modal.className = 'policy-modal';
+      modal.innerHTML =
+        '<div class="policy-modal-backdrop" tabindex="-1"></div>' +
+        '<div class="policy-modal-box">' +
+          '<button type="button" class="policy-modal-close" aria-label="Close">×</button>' +
+          '<div class="policy-modal-iframe-wrap">' +
+            '<iframe id="policy-viewer-iframe" title="Policy document" src="about:blank"></iframe>' +
+          '</div>' +
+          '<div class="policy-modal-footer">© 2026 Rovic Mejia. All Rights Reserved.</div>' +
+        '</div>';
+      document.body.appendChild(modal);
+    }
+    var iframe = document.getElementById('policy-viewer-iframe');
+    var closeBtn = modal.querySelector('.policy-modal-close');
+    var backdrop = modal.querySelector('.policy-modal-backdrop');
+
+    function openPolicyModal(url) {
+      if (!url || url === '#' || url === 'about:blank') return;
+      var sep = url.indexOf('?') >= 0 ? '&' : '?';
+      iframe.src = url + sep + 'modal=1';
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      if (closeBtn) closeBtn.focus();
+    }
+    function closePolicyModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      iframe.src = 'about:blank';
+    }
+
+    document.body.addEventListener('click', function (e) {
+      var a = e.target.closest('a.js-open-policy-modal');
+      if (!a) return;
+      e.preventDefault();
+      openPolicyModal(a.getAttribute('href'));
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closePolicyModal);
+    if (backdrop) backdrop.addEventListener('click', closePolicyModal);
+    modal.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closePolicyModal();
+    });
+  })();
 })();

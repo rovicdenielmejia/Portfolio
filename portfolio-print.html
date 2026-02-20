@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#0d0d0d">
-  <title>Print &amp; Collateral Layouts | Rovic Mejia Portfolio</title>
+  <title>Print &amp; Collateral Layouts | Rovic Mejia</title>
   <link rel="canonical" href="https://rovicmejiaportfolio.com/portfolio-print">
   <link rel="icon" type="image/png" href="Portfolio/Carricature.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body class="page">
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -27,7 +27,18 @@
             <li><a href="hr-services">Workforce &amp; HR Strategy</a></li>
           </ul>
         </li>
-        <li><a href="portfolio">Portfolio</a></li>
+        <li class="nav-item-has-children">
+          <a href="portfolio">Portfolio</a>
+          <ul class="nav-dropdown">
+            <li><a href="portfolio">Portfolio Highlights</a></li>
+            <li><a href="portfolio-brand-identity">Brand Identity &amp; Logo Systems</a></li>
+            <li><a href="portfolio-marketing">Marketing &amp; Campaign Visuals</a></li>
+            <li><a href="portfolio-social">Social Media Visual Systems</a></li>
+            <li><a href="portfolio-event">Event &amp; Pageant Creative</a></li>
+            <li><a href="portfolio-print">Print &amp; Collateral Layouts</a></li>
+            <li><a href="portfolio-specialized">Specialized Creative Work</a></li>
+          </ul>
+        </li>
         <li><a href="contact">Contact</a></li>
         <li class="nav-item-has-children">
           <a href="about">About</a>
@@ -37,13 +48,13 @@
             <li><a href="certification">Certifications</a></li>
           </ul>
         </li>
+        <li><a href="frequently-ask-questions.html">FAQ</a></li>
       </ul>
     </nav>
   </header>
   <main id="main-content">
     <section class="section portfolio portfolio-category-page">
       <div class="container">
-        <p class="services-back-link"><a href="portfolio">← Back to Portfolio</a></p>
         <h2 class="section-title split-title"><span class="title-bold">PRINT</span> <span class="title-script"> &amp; Collateral Layouts</span></h2>
         <p class="portfolio-category-page-caption">Print-ready designs laid out for clarity and production — tarpaulins, booklets, certificates, programs, and collateral materials.</p>
         <div class="portfolio-carousel-wrap">
@@ -105,6 +116,15 @@
       </div>
     </section>
   </main>
+
+  <section class="universal-cta" aria-label="Call to action">
+    <div class="container">
+      <h2 class="universal-cta-headline">Inspired by the Work?</h2>
+      <p class="universal-cta-subtitle">Let’s build something structured and strategic for your business.</p>
+      <button type="button" class="btn btn-primary services-inquire-btn" data-inquire-subject="Portfolio / Print Inquiry - Rovic Mejia" data-inquire-title="Book a Strategic Consultation" data-inquire-to="rovicdenielmejia@gmail.com" data-inquire-page-type="Creative Project">Book a consultation</button>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="footer-accent" aria-hidden="true"></div>
     <div class="container">
@@ -123,6 +143,7 @@
             <a href="portfolio">Portfolio</a>
             <a href="contact">Contact</a>
             <a href="about">About</a>
+            <a href="frequently-ask-questions.html">FAQ</a>
           </nav>
         </div>
         <div class="footer-col footer-col-connect">
@@ -141,9 +162,9 @@
       <div class="footer-bottom footer-bottom-premium">
         <span class="footer-copyright">© 2026 Rovic Mejia. All Rights Reserved.</span>
         <div class="footer-legal-wrap">
-          <a href="terms-of-service.html">Terms of Service</a>
+          <a href="terms-of-service.html" class="js-open-policy-modal">Terms of Service</a>
           <span class="footer-legal-divider">|</span>
-          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="privacy-policy.html" class="js-open-policy-modal">Privacy Policy</a>
         </div>
       </div>
     </div>
