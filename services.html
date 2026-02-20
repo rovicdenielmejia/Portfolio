@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body class="page">
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -34,7 +34,7 @@
         <li class="nav-item-has-children">
           <a href="services">Services</a>
           <ul class="nav-dropdown">
-            <li><a href="graphic-design.html">Brand &amp; Visual Strategy</a></li>
+            <li><a href="graphic-design">Brand &amp; Visual Strategy</a></li>
             <li><a href="hr-services">Workforce &amp; HR Strategy</a></li>
           </ul>
         </li>
@@ -59,7 +59,7 @@
             <li><a href="certification">Certifications</a></li>
           </ul>
         </li>
-        <li><a href="frequently-ask-questions.html">FAQ</a></li>
+        <li><a href="frequently-ask-questions">FAQ</a></li>
       </ul>
     </nav>
   </header>
@@ -75,7 +75,7 @@
           <article class="services-pillar-card" aria-labelledby="pillar-brand-title">
             <h3 id="pillar-brand-title" class="services-pillar-card-title">Brand &amp; Visual Strategy</h3>
             <p class="services-pillar-card-desc">I design structured visual systems that elevate brand credibility, improve consistency, and strengthen market presence — from identity creation to campaign execution.</p>
-            <a href="graphic-design.html" class="btn btn-outline">Learn More</a>
+            <a href="graphic-design" class="btn btn-outline">Learn More</a>
             <blockquote class="services-pillar-testimonial">
               <p class="testimonial-quote">"What I appreciated most was how organized the process was. He presented concepts clearly, explained the design choices, and delivered clean files ready for both print and online use. Very professional and reliable."</p>
               <footer class="testimonial-attribution">— James T., Startup Founder, Local Business</footer>
@@ -124,7 +124,7 @@
         <div class="inquire-form-row privacy-checkbox-row">
           <label class="privacy-checkbox-label">
             <input type="checkbox" name="privacy_agreement" required>
-            <span>I agree to the <a href="privacy-policy.html" class="js-open-policy-modal">Privacy Policy</a>, <a href="terms-of-service.html" class="js-open-policy-modal">Terms of Service</a></span>
+            <span>I agree to the <a href="privacy-policy" class="js-open-policy-modal">Privacy Policy</a>, <a href="terms-of-service" class="js-open-policy-modal">Terms of Service</a></span>
           </label>
         </div>
         <div class="inquire-form-actions">
@@ -165,7 +165,7 @@
             <a href="portfolio">Portfolio</a>
             <a href="contact">Contact</a>
             <a href="about">About</a>
-            <a href="frequently-ask-questions.html">FAQ</a>
+            <a href="frequently-ask-questions">FAQ</a>
           </nav>
         </div>
         <div class="footer-col footer-col-connect">
@@ -184,9 +184,9 @@
       <div class="footer-bottom footer-bottom-premium">
         <span class="footer-copyright">© 2026 Rovic Mejia. All Rights Reserved.</span>
         <div class="footer-legal-wrap">
-          <a href="terms-of-service.html" class="js-open-policy-modal">Terms of Service</a>
+          <a href="terms-of-service" class="js-open-policy-modal">Terms of Service</a>
           <span class="footer-legal-divider">|</span>
-          <a href="privacy-policy.html" class="js-open-policy-modal">Privacy Policy</a>
+          <a href="privacy-policy" class="js-open-policy-modal">Privacy Policy</a>
         </div>
       </div>
     </div>
@@ -194,7 +194,7 @@
   <a href="#" class="back-to-top" id="back-to-top" aria-label="Back to top">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
   </a>
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=6"></script>
   <script src="https://cdn.jotfor.ms/agent/embedjs/019c773da1d1777cba1deb8d70336163dd86/embed.js"></script>
   <script>
     (function(){function initInquireModal(){var modal=document.getElementById('inquire-modal');var modalTitle=document.getElementById('inquire-modal-title');var modalForm=document.getElementById('inquire-modal-form');var subjectInput=modalForm?modalForm.querySelector('input[name="subject"]'):null;var lastFocused=null;var inquireToOverride=null;var openModal=function(s,t,el){if(!modal||!modalForm)return;lastFocused=el||document.activeElement;inquireToOverride=el&&el.getAttribute('data-inquire-to');if(subjectInput)subjectInput.value=s||'';if(modalTitle)modalTitle.textContent=t||'Inquire';modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';var cb=modal.querySelector('.inquire-modal-close');var first=cb||modalForm.querySelector('input, textarea, button');if(first)setTimeout(function(){first.focus();},50);};var closeModal=function(){if(!modal)return;modal.setAttribute('aria-hidden','true');document.body.style.overflow='';if(lastFocused&&typeof lastFocused.focus==='function')lastFocused.focus();};if(modal){var cb=modal.querySelector('.inquire-modal-close');var bd=modal.querySelector('.inquire-modal-backdrop');if(cb)cb.addEventListener('click',closeModal);if(bd)bd.addEventListener('click',closeModal);}document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal&&modal.getAttribute('aria-hidden')==='false')closeModal();});document.querySelectorAll('.services-inquire-btn').forEach(function(btn){btn.addEventListener('click',function(){openModal(this.getAttribute('data-inquire-subject')||'',this.getAttribute('data-inquire-title')||'Inquire',this);});});if(!modalForm)return;var phone=modalForm.querySelector('input[name="phone"]');if(phone){phone.addEventListener('input',function(){this.value=this.value.replace(/[^0-9]/g,'');});phone.addEventListener('paste',function(e){e.preventDefault();var p=(e.clipboardData||window.clipboardData).getData('text').replace(/[^0-9]/g,'');var st=this.selectionStart,en=this.selectionEnd;this.value=this.value.slice(0,st)+p+this.value.slice(en);this.setSelectionRange(st+p.length,st+p.length);});}modalForm.addEventListener('submit',function(e){e.preventDefault();var to=inquireToOverride||'rovicdenielmejia@gmail.com';var cc=inquireToOverride?'':'wrs.recruitment.hr@gmail.com,techprintcoreph@gmail.com,rovicmejia.hrd@gmail.com';var subj=(subjectInput&&subjectInput.value)?subjectInput.value.trim():'Inquiry from portfolio';var body=[];var n=modalForm.elements.name,em=modalForm.elements.email,p=modalForm.elements.phone,m=modalForm.elements.message;if(n&&n.value)body.push('Name: '+n.value.trim());if(em&&em.value)body.push('Email: '+em.value.trim());if(p&&p.value.trim())body.push('Phone: '+p.value.trim());body.push('');if(m&&m.value)body.push(m.value.trim());var bs=body.join('\n');if(bs.length>1200)bs=bs.slice(0,1200)+'\n\n[... truncated ...]';var mailto='mailto:'+to+(cc?'?cc='+encodeURIComponent(cc)+'&':'?')+'subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(bs);closeModal();inquireToOverride=null;window.location.href=mailto;});}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initInquireModal);else initInquireModal();})();
