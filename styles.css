@@ -1068,6 +1068,7 @@ main h1, main h2, main h3, main h4, main h5, main h6 {
   letter-spacing: 0.02em;
   color: var(--text);
   margin: 0 0 0.5rem;
+  white-space: nowrap;
 }
 .hero-home-subtitle {
   font-size: 1.1rem;
@@ -7235,4 +7236,19 @@ pre {
 .cookie-banner .cookie-buttons button:last-child {
   background-color: #444;
   color: #fff;
+}
+
+/* Mobile only: center align all page content */
+@media (max-width: 768px) {
+  main,
+  .section,
+  .container,
+  .page {
+    text-align: center;
+  }
+
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
