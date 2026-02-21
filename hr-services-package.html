@@ -21,15 +21,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
   <style>
+    /* Override body justify for this page */
+    .pricing-section { text-align: left; }
     /* Premium spacing scale: 0.5 1 1.5 2 2.5 3 rem */
     .pricing-section { padding: 2rem 0 2.5rem; }
     .brand-pricing-header { text-align: center; margin-bottom: 1.5rem; }
     .brand-pricing-hero-headline { font-size: 1.25rem; font-weight: 800; letter-spacing: 0.04em; color: var(--text); margin: 0 0 0.5rem; text-align: center; line-height: 1.3; }
     .brand-pricing-tagline { font-size: 0.9rem; font-weight: 600; color: var(--accent); letter-spacing: 0.03em; margin: 0 0 0.5rem; text-align: center; }
     .brand-pricing-lead { color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin: 0 auto; max-width: 36rem; text-align: center; }
-    .start-here { margin: 1.5rem auto 2rem; max-width: 28rem; padding: 1rem 1.25rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; text-align: center; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2); }
+    .start-here { margin: 1.5rem auto 2rem; max-width: 28rem; padding: 1rem 1.25rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; text-align: center; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2); overflow-wrap: break-word; word-wrap: break-word; }
     .start-here-title { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin: 0 0 0.5rem; }
     .start-here-question { font-size: 0.9rem; font-weight: 600; color: var(--text); margin: 0 0 0.5rem; }
     .start-here-list { list-style: none; margin: 0; padding: 0; font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; text-align: left; }
@@ -43,7 +45,7 @@
     .brand-pricing-block-intro { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0 auto 1rem; max-width: 34rem; text-align: center; }
     .brand-pricing-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 2rem 0; }
     .brand-pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 0; max-width: 44rem; margin-left: auto; margin-right: auto; }
-    .pricing-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.25rem; display: flex; flex-direction: column; min-width: 0; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); transition: border-color 0.25s ease, box-shadow 0.25s ease; }
+    .pricing-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.25rem; display: flex; flex-direction: column; min-width: 0; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); transition: border-color 0.25s ease, box-shadow 0.25s ease; overflow-wrap: break-word; word-wrap: break-word; }
     .pricing-card:hover { border-color: var(--accent); box-shadow: 0 6px 28px rgba(0, 0, 0, 0.2), 0 0 0 1px var(--accent), 0 0 20px var(--gold-glow); }
     .pricing-card.pricing-card-recommended { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); }
     .pricing-card.pricing-card-recommended:hover { border-color: var(--accent); box-shadow: 0 6px 28px rgba(0, 0, 0, 0.2), 0 0 0 1px var(--accent), 0 0 20px var(--gold-glow); }
@@ -51,11 +53,11 @@
     .pricing-price { font-size: 1.05rem; color: var(--accent); margin-bottom: 0.5rem; font-weight: 700; }
     .pricing-card-desc { font-size: 0.82rem; color: var(--text-muted); margin: 0 0 0.5rem; line-height: 1.4; }
     .pricing-card h4 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin: 0.75rem 0 0.35rem; }
-    .pricing-card ul { margin: 0; padding-left: 1.1rem; font-size: 0.82rem; color: var(--text); line-height: 1.45; }
+    .pricing-card ul { margin: 0; padding-left: 1.1rem; font-size: 0.82rem; color: var(--text); line-height: 1.45; overflow-wrap: break-word; word-wrap: break-word; }
     .pricing-card ul li { margin-bottom: 0.25rem; }
     .pricing-card-cta { margin-top: auto; padding-top: 1rem; text-align: center; }
     .pricing-card-cta .btn { width: auto; max-width: 100%; text-align: center; padding: 0.45rem 0.9rem; }
-    .hr-retainer-section { margin: 2rem 0; max-width: 48rem; margin-left: auto; margin-right: auto; padding: 1.5rem 1.75rem; background: linear-gradient(145deg, rgba(16, 16, 16, 0.98) 0%, rgba(12, 12, 12, 0.98) 100%); border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 6px 28px rgba(0, 0, 0, 0.3); text-align: center; transition: border-color 0.25s ease, box-shadow 0.25s ease; }
+    .hr-retainer-section { margin: 2rem 0; max-width: 48rem; margin-left: auto; margin-right: auto; padding: 1.5rem 1.75rem; background: linear-gradient(145deg, rgba(16, 16, 16, 0.98) 0%, rgba(12, 12, 12, 0.98) 100%); border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 6px 28px rgba(0, 0, 0, 0.3); text-align: center; transition: border-color 0.25s ease, box-shadow 0.25s ease; overflow-wrap: break-word; word-wrap: break-word; }
     .hr-retainer-section:hover { border-color: var(--accent); box-shadow: 0 6px 28px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--accent), 0 0 24px var(--gold-glow); }
     .hr-retainer-badge { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin: 0 0 0.5rem; }
     .hr-retainer-section h2 { font-size: 1.1rem; font-weight: 700; color: var(--text); margin: 0 0 0.35rem; letter-spacing: 0.02em; }
@@ -64,11 +66,12 @@
     .hr-retainer-investment { font-size: 1rem; font-weight: 700; color: var(--accent); margin: 0 0 0.25rem; }
     .hr-retainer-investment-note { font-size: 0.82rem; color: var(--text-muted); margin: 0 0 0.75rem; }
     .hr-retainer-two-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; max-width: 36rem; margin: 0 auto 0.75rem; text-align: center; }
+    .hr-retainer-col { min-width: 0; overflow-wrap: break-word; word-wrap: break-word; }
     .hr-retainer-col h4 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin: 0 0 0.5rem; }
-    .hr-retainer-col .services-check-list { list-style: none; margin: 0; padding: 0; text-align: left; display: inline-block; }
-    .hr-retainer-col .services-check-list li { margin-bottom: 0.3rem; padding-left: 1.25rem; position: relative; font-size: 0.84rem; color: var(--text-muted); }
+    .hr-retainer-col .services-check-list { list-style: none; margin: 0; padding: 0; text-align: left; display: block; max-width: 100%; }
+    .hr-retainer-col .services-check-list li { margin-bottom: 0.3rem; padding-left: 1.25rem; position: relative; font-size: 0.84rem; color: var(--text-muted); overflow-wrap: break-word; word-wrap: break-word; }
     .hr-retainer-col .services-check-list li::before { content: "✔"; position: absolute; left: 0; color: #22c55e; font-weight: 700; }
-    .hr-retainer-col .hr-retainer-ideal { list-style: none; margin: 0; padding: 0; font-size: 0.84rem; color: var(--text-muted); text-align: left; display: inline-block; }
+    .hr-retainer-col .hr-retainer-ideal { list-style: none; margin: 0; padding: 0; font-size: 0.84rem; color: var(--text-muted); text-align: left; display: block; max-width: 100%; }
     .hr-retainer-col .hr-retainer-ideal li { margin-bottom: 0.3rem; padding-left: 0.9rem; position: relative; }
     .hr-retainer-col .hr-retainer-ideal li::before { content: "•"; position: absolute; left: 0; color: var(--accent); }
     .hr-retainer-section h4 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin: 1rem 0 0.4rem; text-align: center; }
@@ -87,7 +90,7 @@
     .hr-signature-investment-note { font-size: 0.82rem; color: var(--text-muted); margin: 0 0 0.75rem; }
     .hr-signature-section h4 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin: 1rem 0 0.4rem; text-align: center; }
     .hr-signature-includes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin: 0 auto 0.75rem; max-width: 46rem; text-align: left; }
-    .hr-signature-group { padding: 0.75rem 1rem; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 8px; }
+    .hr-signature-group { padding: 0.75rem 1rem; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 8px; min-width: 0; overflow-wrap: break-word; word-wrap: break-word; }
     .hr-signature-group-title { font-size: 0.78rem; font-weight: 700; color: var(--text); margin: 0 0 0.35rem; letter-spacing: 0.02em; }
     .hr-signature-section .services-check-list { list-style: none; margin: 0; padding: 0; text-align: left; display: block; }
     .hr-signature-section .services-check-list li { margin-bottom: 0.25rem; padding-left: 1.25rem; position: relative; font-size: 0.82rem; color: var(--text-muted); }
@@ -105,7 +108,7 @@
     .payment-terms-short { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); max-width: 28rem; margin-left: auto; margin-right: auto; text-align: center; }
     .payment-terms-divider { font-size: 1rem; color: var(--text-muted); margin: 0 0 0.5rem; letter-spacing: 0.2em; }
     .payment-terms-heading { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 0.5rem; }
-    .payment-terms-list { list-style: none; margin: 0 auto 0.5rem; padding: 0; font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; display: inline-block; text-align: left; }
+    .payment-terms-list { list-style: none; margin: 0 auto 0.5rem; padding: 0; font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; display: block; max-width: 100%; text-align: left; overflow-wrap: break-word; word-wrap: break-word; }
     .payment-terms-list li { margin-bottom: 0.3rem; padding-left: 0.9rem; position: relative; }
     .payment-terms-list li::before { content: "•"; position: absolute; left: 0; color: var(--accent); }
     .payment-terms-link-wrap { margin: 0.5rem 0 0; }
@@ -363,7 +366,7 @@
             <li>Downpayments are non-refundable once work begins</li>
           </ul>
           <p class="payment-terms-link-wrap">
-            <a href="hr-client-policy" class="payment-terms-link js-open-policy-modal">View Full Client Policy →</a>
+            <a href="hr-client-policy.html" class="payment-terms-link js-open-policy-modal">View Full Client Policy →</a>
           </p>
         </div>
       </div>
@@ -406,7 +409,7 @@
         <div class="inquire-form-row privacy-checkbox-row">
           <label class="privacy-checkbox-label">
             <input type="checkbox" name="privacy_agreement" required>
-            <span>I agree to the <a href="privacy-policy" class="js-open-policy-modal">Privacy Policy</a>, <a href="terms-of-service" class="js-open-policy-modal">Terms of Service</a></span>
+            <span>I agree to the <a href="privacy-policy.html" class="js-open-policy-modal">Privacy Policy</a>, <a href="terms-of-service.html" class="js-open-policy-modal">Terms of Service</a></span>
           </label>
         </div>
         <div class="inquire-form-actions">
@@ -427,9 +430,9 @@
       <div class="footer-inner">
         <div class="footer-col footer-col-brand">
           <p class="footer-brand">Rovic Mejia</p>
-          <p class="footer-intro">Hybrid Creative &amp; Workforce Strategist.</p>
-          <p class="footer-intro">Building brands externally.</p>
-          <p class="footer-intro">Structuring teams internally.</p>
+          <p class="footer-intro">Your Hybrid Creative &amp; Workforce Strategist.</p>
+          <p class="footer-intro">Building your brands externally.</p>
+          <p class="footer-intro">Structuring your teams internally.</p>
         </div>
         <div class="footer-col footer-col-links">
           <h3 class="footer-nav-title">Quick Links</h3>
@@ -444,11 +447,13 @@
         </div>
         <div class="footer-col footer-col-connect">
           <h3 class="footer-nav-title">Connect</h3>
-          <ul class="footer-icons" aria-label="Connect">
+          <ul class="footer-icons footer-icons-row1" aria-label="Connect">
             <li><a href="tel:+639755636276" aria-label="Phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a></li>
             <li><a href="https://www.facebook.com/rovicmejia07/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li>
             <li><a href="https://www.instagram.com/rovicmejia.official/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a></li>
             <li><a href="https://t.me/rovicmejia" target="_blank" rel="noopener" aria-label="Telegram"><img src="Assets/Icons/telegram.png" alt="" width="20" height="20" loading="lazy"></a></li>
+          </ul>
+          <ul class="footer-icons footer-icons-row2" aria-label="Connect">
             <li><a href="https://wa.me/639755636276" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="Assets/Icons/whatsapp.png" alt="" width="20" height="20" loading="lazy"></a></li>
             <li><a href="viber://chat?number=639755636276" aria-label="Viber"><img src="Assets/Icons/viber.png" alt="" width="20" height="20" loading="lazy"></a></li>
             <li><a href="mailto:rovicdenielmejia@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a></li>
@@ -458,9 +463,9 @@
       <div class="footer-bottom footer-bottom-premium">
         <span class="footer-copyright">© 2026 Rovic Mejia. All Rights Reserved.</span>
         <div class="footer-legal-wrap">
-          <a href="terms-of-service" class="js-open-policy-modal">Terms of Service</a>
+          <a href="terms-of-service.html" class="js-open-policy-modal">Terms of Service</a>
           <span class="footer-legal-divider">|</span>
-          <a href="privacy-policy" class="js-open-policy-modal">Privacy Policy</a>
+          <a href="privacy-policy.html" class="js-open-policy-modal">Privacy Policy</a>
         </div>
       </div>
     </div>
@@ -468,7 +473,7 @@
   <a href="#" class="back-to-top" id="back-to-top" aria-label="Back to top">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
   </a>
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
   <script src="https://cdn.jotfor.ms/agent/embedjs/019c773da1d1777cba1deb8d70336163dd86/embed.js"></script>
   <script>
     (function() {

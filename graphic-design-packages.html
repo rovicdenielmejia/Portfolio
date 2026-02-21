@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
   <style>
     .pricing-section { padding: 2rem 0; }
     .brand-pricing-header { text-align: center; margin-bottom: 2rem; }
@@ -31,7 +31,7 @@
     .start-here { margin: 2.5rem auto 3rem; max-width: 28rem; padding: 1.5rem 1.75rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; text-align: center; }
     .start-here-title { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 0.5rem; }
     .start-here-question { font-size: 1rem; font-weight: 600; color: var(--text); margin: 0 0 0.75rem; }
-    .start-here-list { list-style: none; margin: 0; padding: 0; font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; text-align: left; }
+    .start-here-list { list-style: none; margin: 0; padding: 0; font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; text-align: justify; }
     .start-here-list li { margin-bottom: 0.5rem; padding-left: 0; }
     .start-here-list li::before { content: "• "; color: var(--accent); }
     .brand-identity-lead { font-size: 1rem; font-weight: 600; color: var(--text); text-align: center; margin: 0 0 1.5rem; line-height: 1.4; }
@@ -86,7 +86,7 @@
     .payment-terms-short { margin-top: 4rem; padding-top: 2.5rem; max-width: 28rem; margin-left: auto; margin-right: auto; text-align: center; }
     .payment-terms-divider { font-size: 1.25rem; color: var(--text-muted); margin: 0 0 1rem; letter-spacing: 0.2em; }
     .payment-terms-heading { font-size: 0.9rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 0.75rem; }
-    .payment-terms-list { list-style: none; margin: 0 auto 1.25rem; padding: 0; font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; display: inline-block; text-align: left; }
+    .payment-terms-list { list-style: none; margin: 0 auto 1.25rem; padding: 0; font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; display: inline-block; text-align: justify; }
     .payment-terms-list li { margin-bottom: 0.35rem; padding-left: 1rem; position: relative; }
     .payment-terms-list li::before { content: "•"; position: absolute; left: 0; color: var(--accent); }
     .payment-terms-link-wrap { margin: 0; }
@@ -102,7 +102,7 @@
     .signature-offer-value { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin: 0 0 0.5rem; }
     .signature-offer-price { font-size: 1.25rem; color: var(--accent); font-weight: 700; margin: 0 0 1rem; }
     .signature-offer h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin: 1rem 0 0.35rem; }
-    .signature-offer ul { list-style: none; margin: 0 0 1rem; padding: 0; font-size: 0.9rem; color: var(--text); line-height: 1.6; text-align: left; }
+    .signature-offer ul { list-style: none; margin: 0 0 1rem; padding: 0; font-size: 0.9rem; color: var(--text); line-height: 1.6; text-align: justify; }
     .signature-offer ul li { margin-bottom: 0.35rem; padding-left: 1rem; position: relative; }
     .signature-offer ul li::before { content: "•"; position: absolute; left: 0; color: var(--accent); }
     .signature-offer-cta { margin-top: 0.5rem; }
@@ -374,7 +374,7 @@
             <li>Downpayments are non-refundable</li>
           </ul>
           <p class="payment-terms-link-wrap">
-            <a href="client-policy" class="payment-terms-link js-open-policy-modal">View Full Client Policy →</a>
+            <a href="client-policy.html" class="payment-terms-link js-open-policy-modal">View Full Client Policy →</a>
           </p>
         </div>
       </div>
@@ -432,7 +432,7 @@
         <div class="inquire-form-row privacy-checkbox-row">
           <label class="privacy-checkbox-label">
             <input type="checkbox" name="privacy_agreement" required>
-            <span>I agree to the <a href="privacy-policy" class="js-open-policy-modal">Privacy Policy</a>, <a href="terms-of-service" class="js-open-policy-modal">Terms of Service</a></span>
+            <span>I agree to the <a href="privacy-policy.html" class="js-open-policy-modal">Privacy Policy</a>, <a href="terms-of-service.html" class="js-open-policy-modal">Terms of Service</a></span>
           </label>
         </div>
         <div class="inquire-form-actions">
@@ -472,7 +472,7 @@
         <div class="inquire-form-row privacy-checkbox-row">
           <label class="privacy-checkbox-label">
             <input type="checkbox" name="privacy_agreement" required>
-            <span>I agree to the <a href="privacy-policy" class="js-open-policy-modal">Privacy Policy</a>, <a href="terms-of-service" class="js-open-policy-modal">Terms of Service</a></span>
+            <span>I agree to the <a href="privacy-policy.html" class="js-open-policy-modal">Privacy Policy</a>, <a href="terms-of-service.html" class="js-open-policy-modal">Terms of Service</a></span>
           </label>
         </div>
         <div class="inquire-form-actions">
@@ -493,9 +493,9 @@
       <div class="footer-inner">
         <div class="footer-col footer-col-brand">
           <p class="footer-brand">Rovic Mejia</p>
-          <p class="footer-intro">Hybrid Creative &amp; Workforce Strategist.</p>
-          <p class="footer-intro">Building brands externally.</p>
-          <p class="footer-intro">Structuring teams internally.</p>
+          <p class="footer-intro">Your Hybrid Creative &amp; Workforce Strategist.</p>
+          <p class="footer-intro">Building your brands externally.</p>
+          <p class="footer-intro">Structuring your teams internally.</p>
         </div>
         <div class="footer-col footer-col-links">
           <h3 class="footer-nav-title">Quick Links</h3>
@@ -510,11 +510,13 @@
         </div>
         <div class="footer-col footer-col-connect">
           <h3 class="footer-nav-title">Connect</h3>
-          <ul class="footer-icons" aria-label="Connect">
+          <ul class="footer-icons footer-icons-row1" aria-label="Connect">
             <li><a href="tel:+639755636276" aria-label="Phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a></li>
             <li><a href="https://www.facebook.com/rovicmejia07/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li>
             <li><a href="https://www.instagram.com/rovicmejia.official/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a></li>
             <li><a href="https://t.me/rovicmejia" target="_blank" rel="noopener" aria-label="Telegram"><img src="Assets/Icons/telegram.png" alt="" width="20" height="20" loading="lazy"></a></li>
+          </ul>
+          <ul class="footer-icons footer-icons-row2" aria-label="Connect">
             <li><a href="https://wa.me/639755636276" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="Assets/Icons/whatsapp.png" alt="" width="20" height="20" loading="lazy"></a></li>
             <li><a href="viber://chat?number=639755636276" aria-label="Viber"><img src="Assets/Icons/viber.png" alt="" width="20" height="20" loading="lazy"></a></li>
             <li><a href="mailto:rovicdenielmejia@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a></li>
@@ -524,9 +526,9 @@
       <div class="footer-bottom footer-bottom-premium">
         <span class="footer-copyright">© 2026 Rovic Mejia. All Rights Reserved.</span>
         <div class="footer-legal-wrap">
-          <a href="terms-of-service" class="js-open-policy-modal">Terms of Service</a>
+          <a href="terms-of-service.html" class="js-open-policy-modal">Terms of Service</a>
           <span class="footer-legal-divider">|</span>
-          <a href="privacy-policy" class="js-open-policy-modal">Privacy Policy</a>
+          <a href="privacy-policy.html" class="js-open-policy-modal">Privacy Policy</a>
         </div>
       </div>
     </div>
@@ -534,7 +536,7 @@
   <a href="#" class="back-to-top" id="back-to-top" aria-label="Back to top">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
   </a>
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
   <script src="https://cdn.jotfor.ms/agent/embedjs/019c773da1d1777cba1deb8d70336163dd86/embed.js"></script>
   <script>
     (function() {

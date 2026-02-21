@@ -35,7 +35,8 @@
       if (e.key === 'Escape' && modal && modal.getAttribute('aria-hidden') === 'false') closeModal();
     });
 
-    document.querySelectorAll('.services-inquire-btn').forEach(function(btn) {
+    var inquireSelectors = '.services-inquire-btn, .pageant-inquire-btn, .live-coverage-inquire-btn';
+    document.querySelectorAll(inquireSelectors).forEach(function(btn) {
       btn.addEventListener('click', function() {
         var subject = this.getAttribute('data-inquire-subject') || '';
         var title = this.getAttribute('data-inquire-title') || 'Book a Strategic Consultation';
