@@ -7238,6 +7238,16 @@ pre {
   color: #fff;
 }
 
+/* "All about me" in About dropdown – mobile only */
+.nav-about-mobile-only {
+  display: none;
+}
+@media (max-width: 768px) {
+  .nav-about-mobile-only {
+    display: list-item;
+  }
+}
+
 /* Mobile only: center align all page content */
 @media (max-width: 768px) {
   main,
