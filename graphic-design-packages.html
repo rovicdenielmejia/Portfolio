@@ -21,7 +21,9 @@
   <link rel="icon" type="image/png" href="Portfolio/Carricature.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="styles.css?v=7">
   <style>
     .pricing-section { padding: 2rem 0; }
@@ -116,15 +118,15 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <header class="header">
     <nav class="nav" aria-label="Main navigation">
-      <a href="home" class="logo"><span class="logo-circle"><img src="Assets/about-photo.png" alt="Rovic Mejia" class="logo-img"></span>Rovic Mejia</a>
+      <a href="home" class="logo"><span class="logo-circle"><img src="Assets/about-photo.png" alt="Rovic Mejia" class="logo-img" width="48" height="48" loading="lazy"></span>Rovic Mejia</a>
       <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
       <ul class="nav-links">
         <li><a href="home">Home</a></li>
         <li class="nav-item-has-children">
           <a href="services">Services</a>
           <ul class="nav-dropdown">
-            <li><a href="graphic-design">Brand &amp; Visual Strategy</a></li>
-            <li><a href="hr-services">Workforce &amp; HR Strategy</a></li>
+            <li><a href="landing-graphic-design">Brand &amp; Visual Strategy</a></li>
+            <li><a href="landing-hr-consulting">Workforce &amp; HR Strategy</a></li>
           </ul>
         </li>
         <li class="nav-item-has-children">
@@ -542,7 +544,7 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
   </a>
   <script src="script.js?v=7"></script>
-  <script src="https://cdn.jotfor.ms/agent/embedjs/019c773da1d1777cba1deb8d70336163dd86/embed.js"></script>
+  <script defer src="https://cdn.jotfor.ms/agent/embedjs/019c773da1d1777cba1deb8d70336163dd86/embed.js"></script>
   <script>
     (function() {
       function initPackagesInquire() {

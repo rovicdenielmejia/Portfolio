@@ -18,10 +18,13 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://rovicmejiaportfolio.com/Assets/Link%20Preview.png">
   <link rel="icon" type="image/png" href="Portfolio/Carricature.png">
+  <link rel="preload" href="Portfolio/Carricature.png" as="image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="styles.css?v=8">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
     {"@type":"Question","name":"What services do you offer?","acceptedAnswer":{"@type":"Answer","text":"I provide Brand & Visual Strategy and Workforce & HR Strategy services. This includes logo and brand systems, marketing creatives, recruitment support, and structured HR documentation for growing businesses."}},
@@ -41,15 +44,15 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <header class="header">
     <nav class="nav" aria-label="Main navigation">
-      <a href="home" class="logo"><span class="logo-circle"><img src="Assets/about-photo.png" alt="Rovic Mejia" class="logo-img"></span>Rovic Mejia</a>
+      <a href="home" class="logo"><span class="logo-circle"><img src="Assets/about-photo.png" alt="Rovic Mejia" class="logo-img" width="48" height="48" loading="lazy"></span>Rovic Mejia</a>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <ul class="nav-links">
         <li><a href="home">Home</a></li>
         <li class="nav-item-has-children">
           <a href="services">Services</a>
           <ul class="nav-dropdown">
-            <li><a href="graphic-design">Brand &amp; Visual Strategy</a></li>
-            <li><a href="hr-services">Workforce &amp; HR Strategy</a></li>
+            <li><a href="landing-graphic-design">Brand &amp; Visual Strategy</a></li>
+            <li><a href="landing-hr-consulting">Workforce &amp; HR Strategy</a></li>
           </ul>
         </li>
         <li class="nav-item-has-children">
@@ -85,7 +88,7 @@
     <section id="hero" class="hero hero-home">
       <div class="container hero-home-inner">
         <div class="hero-home-visual">
-          <img src="Portfolio/Carricature.png" alt="Rovic Mejia - Caricature" class="hero-home-caricature" width="320" height="320">
+          <img src="Portfolio/Carricature.png" alt="Rovic Mejia - Caricature" class="hero-home-caricature" width="320" height="320" loading="eager" fetchpriority="high">
         </div>
         <div class="hero-home-content">
           <h1 class="hero-home-title">Hybrid Creative &amp; Workforce Strategist</h1>
@@ -126,12 +129,12 @@
           <article class="pillar-card">
             <h2 class="pillar-card-title">Brand &amp; Visual Strategy</h2>
             <p class="pillar-card-desc">I design structured visual identity systems that elevate brand credibility, improve consistency, and strengthen market presence, from logo and brand development to campaign execution.</p>
-            <a href="graphic-design" class="btn btn-outline">Learn More</a>
+            <a href="landing-graphic-design" class="btn btn-outline">Learn More</a>
           </article>
           <article class="pillar-card">
             <h2 class="pillar-card-title">Workforce &amp; HR Strategy</h2>
             <p class="pillar-card-desc">I support businesses in building organized workforce structures through recruitment guidance, HR documentation systems, and operational alignment as an HR Consultant.</p>
-            <a href="hr-services" class="btn btn-outline">Learn More</a>
+            <a href="landing-hr-consulting" class="btn btn-outline">Learn More</a>
           </article>
         </div>
       </div>
@@ -317,7 +320,7 @@
       <div class="footer-inner">
         <div class="footer-col footer-col-brand">
           <p class="footer-brand">Rovic Mejia</p>
-          <p class="footer-intro">Your Hybrid Creative &amp; Workforce Strategist.</p>
+          <p class="footer-intro">Your Hybrid Creative & Workforce Strategist.</p>
           <p class="footer-intro">Building your brands externally.</p>
           <p class="footer-intro">Structuring your teams internally.</p>
         </div>
@@ -422,7 +425,7 @@
   </div>
 
   <script src="script.js?v=7"></script>
-  <script src="https://cdn.jotfor.ms/agent/embedjs/019c773da1d1777cba1deb8d70336163dd86/embed.js"></script>
+  <script defer src="https://cdn.jotfor.ms/agent/embedjs/019c773da1d1777cba1deb8d70336163dd86/embed.js"></script>
   <script>
     (function() {
       function initInquireModal() {

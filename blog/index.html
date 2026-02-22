@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0d0d0d">
+  <meta name="description" content="Premium insights on branding, marketing, design, and HR for SMEs. Rovic Mejia.">
+  <title>Brand & HR Insights Blogs | Rovic Mejia</title>
+  <link rel="canonical" href="https://rovicmejiaportfolio.com/blog/">
+  <meta property="og:url" content="https://rovicmejiaportfolio.com/blog/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Premium Blog | Rovic Mejia">
+  <meta property="og:image" content="https://rovicmejiaportfolio.com/Assets/Link%20Preview.png">
+  <link rel="icon" type="image/png" href="../Portfolio/Carricature.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="../styles.css?v=7">
+  <style>
+    .premium-blog-header {
+      background: var(--bg);
+      padding: 2.5rem 0 1.5rem;
+      text-align: center;
+      color: var(--text);
+    }
+    .premium-blog-title {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.02em;
+    }
+    .premium-blog-subtitle {
+      font-size: 1.25rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    .premium-blog-intro {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .premium-blog-list-custom {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .premium-blog-list-custom > .premium-blog-card:nth-child(1) { grid-row: 1; grid-column: 1; }
+    .premium-blog-list-custom > .premium-blog-card:nth-child(2) { grid-row: 1; grid-column: 2; }
+    .premium-blog-list-custom > .premium-blog-card:nth-child(3) { grid-row: 2; grid-column: 1; }
+    .premium-blog-list-custom > .premium-blog-card:nth-child(4) { grid-row: 2; grid-column: 2; }
+    .premium-blog-list-custom > .premium-blog-card:nth-child(5) { grid-row: 3; grid-column: 1 / span 2; justify-self: center; }
+    .premium-blog-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 260px;
+      height: 100%;
+      background: var(--bg-card);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(232,168,74,0.08);
+      border: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .premium-blog-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 12px 40px var(--gold-glow);
+    }
+    .premium-blog-card-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+    .premium-blog-card-meta {
+      font-size: 0.95rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .premium-blog-card-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .premium-blog-card-link {
+      align-self: center;
+      padding: 0.75rem 1.5rem;
+      background: var(--accent);
+      color: var(--bg);
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .premium-blog-card-link:hover {
+      background: var(--accent-hover);
+    }
+    @media (max-width: 900px) {
+      .premium-blog-list-custom {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+      }
+      .premium-blog-list-custom > .premium-blog-card { grid-column: 1 !important; grid-row: auto !important; }
+    }
+  </style>
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body class="page">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header class="header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="../home" class="logo"><span class="logo-circle"><img src="../Assets/about-photo.png" alt="Rovic Mejia" class="logo-img" width="48" height="48" loading="lazy"></span>Rovic Mejia</a>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="../home">Home</a></li>
+        <li class="nav-item-has-children"><a href="../services">Services</a>
+          <ul class="nav-dropdown">
+            <li><a href="../graphic-design">Brand &amp; Visual Strategy</a></li>
+            <li><a href="../hr-services">Workforce &amp; HR Strategy</a></li>
+          </ul>
+        </li>
+        <li class="nav-item-has-children"><a href="../portfolio">Portfolio</a>
+          <ul class="nav-dropdown">
+            <li><a href="../portfolio">Portfolio Highlights</a></li>
+            <li><a href="../portfolio-brand-identity">Brand Identity</a></li>
+            <li><a href="../portfolio-marketing">Marketing Visuals</a></li>
+            <li><a href="../portfolio-social">Social Media</a></li>
+            <li><a href="../portfolio-event">Event &amp; Pageant</a></li>
+            <li><a href="../portfolio-print">Print Layouts</a></li>
+            <li><a href="../portfolio-specialized">Specialized Work</a></li>
+          </ul>
+        </li>
+        <li><a href="../contact">Contact</a></li>
+        <li class="nav-item-has-children"><a href="../about">About</a>
+          <ul class="nav-dropdown">
+            <li class="nav-about-mobile-only"><a href="../about">All about me</a></li>
+            <li><a href="../skills">Skills</a></li>
+            <li><a href="../experience">Experience</a></li>
+            <li><a href="../certification">Certifications</a></li>
+          </ul>
+        </li>
+        <li><a href="../frequently-ask-questions">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main-content">
+    <section class="premium-blog-header" style="background: var(--bg); padding: 2.5rem 0 1.5rem; text-align: center; color: var(--text);">
+      <h1 class="premium-blog-title">Brand & HR Insights Blog for SMEs</h1>
+      <div class="premium-blog-subtitle">Brand & Workforce Insights for SMEs</div>
+      <div class="premium-blog-intro">Expert articles on branding, marketing visuals, event design, social media graphics, and HR solutions for Philippine SMEs. Curated by Rovic Mejia.</div>
+    </section>
+    <section class="premium-blog-list premium-blog-list-custom">
+      <div class="premium-blog-card" style="grid-row: 1; grid-column: 1;">
+        <div class="premium-blog-card-title">Brand Identity for SMEs: Building Credible Visual Systems</div>
+        <div class="premium-blog-card-meta">Brand & Visual Strategy</div>
+        <div class="premium-blog-card-desc">How to create a strong, credible brand identity for small businesses, with practical design systems and visual consistency.</div>
+        <a href="brand-identity-smes.html" class="premium-blog-card-link">Read Article</a>
+      </div>
+      <div class="premium-blog-card" style="grid-row: 1; grid-column: 2;">
+        <div class="premium-blog-card-title">Marketing Campaign Visuals That Drive Results for Small Business</div>
+        <div class="premium-blog-card-meta">Brand & Visual Strategy</div>
+        <div class="premium-blog-card-desc">Tips for designing marketing visuals that convert, attract attention, and build trust for SMEs.</div>
+        <a href="marketing-campaign-visuals-smes.html" class="premium-blog-card-link">Read Article</a>
+      </div>
+      <div class="premium-blog-card" style="grid-row: 2; grid-column: 1;">
+        <div class="premium-blog-card-title">Church Posters & Event Visuals That Get Noticed</div>
+        <div class="premium-blog-card-meta">Brand & Visual Strategy</div>
+        <div class="premium-blog-card-desc">Strategies for creating event posters and church visuals that stand out and engage your audience.</div>
+        <a href="church-event-posters.html" class="premium-blog-card-link">Read Article</a>
+      </div>
+      <div class="premium-blog-card" style="grid-row: 2; grid-column: 2;">
+        <div class="premium-blog-card-title">Social Media Graphics That Strengthen Your Brand</div>
+        <div class="premium-blog-card-meta">Brand & Visual Strategy</div>
+        <div class="premium-blog-card-desc">Best practices for designing social media graphics that reinforce your brand and drive engagement.</div>
+        <a href="social-media-graphics-brand.html" class="premium-blog-card-link">Read Article</a>
+      </div>
+      <div class="premium-blog-card" style="grid-row: 3; grid-column: 1 / span 2; justify-self: center;">
+        <div class="premium-blog-card-title">Recruitment & Workforce Management for Growing Businesses</div>
+        <div class="premium-blog-card-meta">Workforce & HR Strategy</div>
+        <div class="premium-blog-card-desc">Guidance on recruitment, HR systems, and workforce management for startups and SMEs.</div>
+        <a href="recruitment-workforce-smes.html" class="premium-blog-card-link">Read Article</a>
+      </div>
+    </section>
+    <div style="height: 2.5rem;"></div>
+    <section class="universal-cta" aria-label="Call to action">
+      <div class="container">
+        <h2 class="universal-cta-headline">Ready to Get Started?</h2>
+        <p class="universal-cta-subtitle">Let's discuss your brand or workforce needs.</p>
+        <button type="button" class="btn btn-primary services-inquire-btn" data-inquire-subject="Consultation Request - Rovic Mejia" data-inquire-title="Book a Consultation" data-inquire-to="rovicdenielmejia@gmail.com">Book a consultation</button>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-accent" aria-hidden="true"></div>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-col footer-col-brand">
+          <p class="footer-brand">Rovic Mejia</p>
+          <p class="footer-intro">Your Hybrid Creative &amp; Workforce Strategist.</p>
+        </div>
+        <div class="footer-col footer-col-links">
+          <h3 class="footer-nav-title">Quick Links</h3>
+          <nav class="footer-quicklinks" aria-label="Quick Links">
+            <a href="../home">Home</a>
+            <a href="../services">Services</a>
+            <a href="../portfolio">Portfolio</a>
+            <a href="../contact">Contact</a>
+            <a href="../about">About</a>
+            <a href="../frequently-ask-questions">FAQ</a>
+          </nav>
+        </div>
+        <div class="footer-col footer-col-connect">
+          <h3 class="footer-nav-title">Connect</h3>
+          <ul class="footer-icons footer-icons-row1" aria-label="Connect">
+            <li><a href="tel:+639755636276" aria-label="Phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a></li>
+            <li><a href="https://www.facebook.com/rovicmejia07/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li>
+            <li><a href="https://www.instagram.com/rovicmejia.official/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a></li>
+            <li><a href="https://t.me/rovicmejia" target="_blank" rel="noopener" aria-label="Telegram"><img src="../Assets/Icons/telegram.png" alt="" width="20" height="20" loading="lazy"></a></li>
+          </ul>
+          <ul class="footer-icons footer-icons-row2" aria-label="Connect">
+            <li><a href="https://wa.me/639755636276" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="../Assets/Icons/whatsapp.png" alt="" width="20" height="20" loading="lazy"></a></li>
+            <li><a href="viber://chat?number=639755636276" aria-label="Viber"><img src="../Assets/Icons/viber.png" alt="" width="20" height="20" loading="lazy"></a></li>
+            <li><a href="mailto:rovicdenielmejia@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom footer-bottom-premium">
+        <span class="footer-copyright">© 2026 Rovic Mejia. All Rights Reserved.</span>
+        <div class="footer-legal-wrap">
+          <a href="../terms-of-service.html" class="js-open-policy-modal">Terms of Service</a>
+          <span class="footer-legal-divider">|</span>
+          <a href="../privacy-policy.html" class="js-open-policy-modal">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <a href="#" class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </a>
+  <script src="../script.js?v=7"></script>
+  <script defer src="https://cdn.jotfor.ms/agent/embedjs/019c773da1d1777cba1deb8d70336163dd86/embed.js"></script>
+  <script>window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments);};</script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+</html>

@@ -259,6 +259,8 @@ input[type="button"],
   .about-preview-lead,
   .about-preview-text {
     max-width: 46ch;
+    margin-left: auto;
+    margin-right: auto;
   }
   /* Card descriptions in grids */
   .services-pillar-card-desc,
@@ -1036,7 +1038,7 @@ main h1, main h2, main h3, main h4, main h5, main h6 {
 }
 .hero-home-inner {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 1fr 1fr;
   gap: var(--gap-rel-lg);
   align-items: center;
   max-width: var(--content-max);
@@ -1050,7 +1052,7 @@ main h1, main h2, main h3, main h4, main h5, main h6 {
 }
 .hero-home-caricature {
   width: 100%;
-  max-width: 280px;
+  max-width: clamp(200px, 30vw, 280px);
   height: auto;
   display: block;
   border-radius: 12px;
@@ -1059,11 +1061,12 @@ main h1, main h2, main h3, main h4, main h5, main h6 {
 }
 .hero-home-content {
   min-width: 0;
+  text-align: left;
 }
 .hero-home-title {
   font-family: var(--font-body);
   font-weight: 800;
-  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-size: clamp(0.7rem, 3.2vw, 2rem);
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: var(--text);
@@ -1087,6 +1090,7 @@ main h1, main h2, main h3, main h4, main h5, main h6 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  justify-content: flex-start;
 }
 .hero-home-ctas .btn {
   min-height: var(--touch-min);
@@ -1508,25 +1512,20 @@ main:has(.section-home) .premium-divider {
 }
 .about-preview-content {
   min-width: 0;
-  text-align: center;
 }
-.about-preview-lead {
+.about-preview-lead,
+.about-preview-text {
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text);
   line-height: 1.65;
-  margin: 0 auto 1rem;
+  margin: 0 0 1rem;
   max-width: 48ch;
-  text-wrap: balance;
+  margin-left: auto;
+  margin-right: auto;
 }
 .about-preview-text {
-  font-size: 0.9em;
-  font-weight: 550;
-  color: var(--text-muted);
-  line-height: 1.65;
-  margin: 0 auto 2rem;
-  max-width: 48ch;
-  text-wrap: balance;
+  margin-bottom: 2rem;
 }
 .about-preview-cta {
   margin: 0;
@@ -1549,14 +1548,6 @@ main:has(.section-home) .premium-divider {
   .about-preview-inner {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-  }
-  .about-preview-content {
-    text-align: center;
-  }
-  .about-preview-lead,
-  .about-preview-text {
-    margin-left: auto;
-    margin-right: auto;
   }
   .about-preview-photo {
     order: -1;
@@ -1789,10 +1780,6 @@ main:has(.section-home) .premium-divider {
 }
 
 /* About page: ABOUT Me section */
-.about-page-section .section-title.split-title .title-bold,
-.about-page-section .section-title.split-title .title-script {
-  font-size: 1.8rem;
-}
 .about-me-section {
   padding-top: 4rem;
   padding-bottom: 5rem;
@@ -1860,23 +1847,12 @@ main:has(.section-home) .premium-divider {
 }
 
 /* About page: full layout (hero, approach, divisions, experience, direct) */
-body.about-page {
-  min-width: 360px;
-  overflow-x: auto;
-}
-
 .about-page-section {
   padding-top: 4rem;
   padding-bottom: 5rem;
-  text-align: left;
 }
 .about-page-section .container-narrow {
   max-width: 42rem;
-}
-@media (min-width: 1024px) {
-  .about-page-section .container-narrow {
-    max-width: var(--content-max);
-  }
 }
 
 .about-hero {
@@ -1898,13 +1874,6 @@ body.about-page {
   display: block;
   border-radius: 12px;
   border: 1px solid var(--border);
-  box-shadow: 0 20px 50px -15px rgba(0,0,0,0.45);
-  transition: box-shadow var(--duration-normal) var(--ease-out-expo), border-color var(--duration-normal), transform var(--duration-normal) var(--ease-out-expo);
-}
-.about-hero-photo:hover img {
-  box-shadow: 0 28px 60px -12px rgba(232,168,74,0.2);
-  border-color: rgba(232,168,74,0.35);
-  transform: translateY(-4px);
 }
 .about-hero-content {
   min-width: 0;
@@ -1916,7 +1885,7 @@ body.about-page {
   margin: 0 0 0.25rem;
 }
 .about-hero-title {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--accent);
   margin: 0 0 0.5rem;
@@ -1954,14 +1923,8 @@ body.about-page {
 .about-division-title {
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--accent);
-  margin: 0 0 0.75rem;
-}
-.about-service-title {
-  font-size: 1rem;
-  font-weight: 600;
   color: var(--text);
-  margin: 1rem 0 0.4rem;
+  margin: 0 0 0.75rem;
 }
 .about-block-lead {
   font-size: 1rem;
@@ -1986,21 +1949,12 @@ body.about-page {
   position: relative;
   padding-left: 1.25rem;
   margin-bottom: 0.35rem;
-  transition: transform var(--duration-fast), color var(--duration-fast);
-}
-.about-list li:hover {
-  color: var(--text);
-  transform: translateX(4px);
 }
 .about-list li::before {
   content: "•";
   position: absolute;
   left: 0;
   color: var(--accent);
-  transition: transform var(--duration-fast);
-}
-.about-list li:hover::before {
-  transform: scale(1.2);
 }
 .about-list-numbered {
   list-style: decimal;
@@ -2010,39 +1964,8 @@ body.about-page {
   content: none;
 }
 
-.about-divisions-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-}
-.about-divisions-row > * {
-  min-width: 0;
-}
-.about-divisions-row .about-block {
-  padding: 1.5rem;
-  border-radius: 12px;
-  border: 1px solid transparent;
-  background: rgba(255,255,255,0.02);
-  transition: background var(--duration-normal), border-color var(--duration-normal), box-shadow var(--duration-normal);
-}
-.about-divisions-row .about-block:hover {
-  background: rgba(255,255,255,0.04);
-  border-color: rgba(255,255,255,0.06);
-  box-shadow: 0 8px 32px -8px rgba(0,0,0,0.3);
-}
 .about-division {
   margin-bottom: 0;
-  padding: 1.5rem;
-  min-width: 0;
-  border-radius: 12px;
-  border: 1px solid transparent;
-  background: rgba(255,255,255,0.02);
-  transition: background var(--duration-normal), border-color var(--duration-normal), box-shadow var(--duration-normal);
-}
-.about-division:hover {
-  background: rgba(255,255,255,0.04);
-  border-color: rgba(255,255,255,0.06);
-  box-shadow: 0 8px 32px -8px rgba(0,0,0,0.3);
 }
 .about-division-desc {
   font-size: 0.95rem;
@@ -2097,13 +2020,9 @@ body.about-page {
 }
 
 @media (max-width: 700px) {
-  .about-divisions-row {
-    grid-template-columns: 1fr;
-  }
   .about-hero {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    align-items: center;
   }
   .about-hero-photo {
     order: -1;
@@ -2111,39 +2030,6 @@ body.about-page {
   }
   .about-hero-photo img {
     width: 260px;
-  }
-  .about-hero-content {
-    text-align: center;
-  }
-  .about-page-section {
-    text-align: center;
-  }
-  .about-block-title,
-  .about-division-title,
-  .about-service-title,
-  .about-block-lead,
-  .about-block-text,
-  .about-division-desc,
-  .about-list {
-    text-align: center;
-  }
-  .about-list li {
-    padding-left: 0;
-    text-align: center;
-  }
-  .about-list li:hover {
-    transform: none;
-  }
-  .about-list li::before {
-    position: static;
-    margin-right: 0.35em;
-  }
-  .about-list-numbered {
-    list-style-position: inside;
-    padding-left: 0;
-  }
-  .about-icons-row.footer-contact {
-    justify-content: center;
   }
 }
 
@@ -2169,10 +2055,13 @@ body.about-page {
   gap: 0.75rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .hero-home-inner {
     grid-template-columns: 1fr;
     gap: var(--gap-rel-lg);
+    text-align: center;
+  }
+  .hero-home-content {
     text-align: center;
   }
   .hero-home-caricature {
@@ -2583,7 +2472,6 @@ body.about-page {
   min-width: 0;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
-  text-align: left;
 }
 
 .tools-platforms-col:hover {
@@ -2597,7 +2485,6 @@ body.about-page {
   color: var(--accent);
   margin: 0 0 1.1rem;
   letter-spacing: 0.03em;
-  text-align: left;
 }
 
 .tools-platforms-list {
@@ -3022,7 +2909,6 @@ body.about-page {
 .hr-services-page.section {
   padding-top: 3.5rem;
   padding-bottom: 5rem;
-  text-align: left;
 }
 
 .hr-services-page .container {
@@ -3102,7 +2988,6 @@ body.about-page {
   display: flex;
   flex-direction: column;
   gap: 0;
-  text-align: left;
 }
 
 .hr-services-page .hr-services-block-intro {
@@ -3183,13 +3068,10 @@ body.about-page {
   background: linear-gradient(160deg, rgba(24, 24, 24, 0.98) 0%, rgba(16, 16, 16, 0.98) 100%);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 16px;
-  text-align: left;
   border-left: 2px solid rgba(232, 168, 74, 0.5);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.03);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   min-width: 0;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
 }
 
 .hr-services-list-card:hover {
@@ -3206,17 +3088,11 @@ body.about-page {
 
 .hr-services-list-card .services-list-simple {
   margin-bottom: 0;
-  padding-left: 1.35rem;
-  list-style-position: outside;
 }
 
 .hr-services-list-card .services-list-simple li {
   margin-bottom: 0.4rem;
   line-height: 1.6;
-  text-align: left;
-  white-space: normal;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
 }
 
 .hr-services-list-card .services-list-simple li:last-child {
@@ -3233,9 +3109,6 @@ body.about-page {
   border-left: 2px solid rgba(232, 168, 74, 0.5);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.03);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  text-align: left;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
 }
 
 .hr-services-coverage-card:hover {
@@ -3247,7 +3120,6 @@ body.about-page {
 .hr-services-coverage-card .services-subtitle-small {
   margin-bottom: 0.75rem;
   letter-spacing: 0.06em;
-  text-align: center;
 }
 
 .hr-services-coverage-card .services-coverage {
@@ -3255,23 +3127,17 @@ body.about-page {
   font-size: 0.95rem;
   color: var(--text-muted);
   line-height: 1.7;
-  text-align: left;
+  text-align: center;
   letter-spacing: 0.02em;
 }
 
 .hr-services-page .services-list-simple {
   margin-bottom: 1.5rem;
-  padding-left: 1.35rem;
-  list-style-position: outside;
 }
 
 .hr-services-page .services-list-simple li {
   margin-bottom: 0.35rem;
   line-height: 1.6;
-  text-align: left;
-  white-space: normal;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
 }
 
 .hr-services-page .premium-divider {
@@ -3312,11 +3178,9 @@ body.about-page {
   border-left: 2px solid rgba(232, 168, 74, 0.5);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.03);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  text-align: left;
+  text-align: justify;
   touch-action: manipulation;
   cursor: pointer;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
 }
 
 .hr-services-page .services-process-block:hover {
@@ -3335,16 +3199,12 @@ body.about-page {
   margin: 0;
   padding-left: 1.35rem;
   line-height: 1.65;
-  text-align: left;
-  list-style-position: outside;
+  text-align: justify;
 }
 
 .hr-services-page .services-process-list li {
   margin-bottom: 0.5rem;
-  text-align: left;
-  white-space: normal;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
+  text-align: justify;
 }
 
 .hr-services-how-section {
@@ -3366,7 +3226,7 @@ body.about-page {
   grid-template-columns: 1fr 1fr;
   gap: 1.75rem;
   margin-top: 0;
-  align-items: stretch;
+  align-items: start;
 }
 
 .hr-services-process-cards .services-process-block {
@@ -3376,11 +3236,6 @@ body.about-page {
 .hr-services-process-cards .services-process-block:first-child {
   border-right: 1px solid rgba(232, 168, 74, 0.2);
   margin-right: -1px;
-}
-
-.hr-services-process-cards .services-process-block:only-child {
-  border-right: none;
-  margin-right: 0;
 }
 
 .hr-services-process-cards .services-process-block:last-child {
@@ -3406,64 +3261,23 @@ body.about-page {
 }
 
 .hr-services-coverage-why-row {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+  align-items: start;
 }
 
+.hr-services-coverage-why-row .hr-services-coverage-card,
 .hr-services-coverage-why-row .hr-services-why-main {
   min-width: 0;
-  width: fit-content;
-  max-width: 100%;
-  align-self: center;
 }
 
-.hr-services-coverage-why-row .hr-services-coverage-premium {
-  width: fit-content;
-  max-width: 100%;
-  align-self: center;
+.hr-services-coverage-why-row > div:first-child {
+  border-right: 1px solid rgba(232, 168, 74, 0.2);
+  margin-right: -1px;
 }
 
-.hr-services-coverage-premium {
-  margin-top: 0;
-  padding: 1.5rem 1.75rem;
-  background: linear-gradient(165deg, rgba(18, 18, 18, 0.98) 0%, rgba(12, 12, 12, 0.99) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  border-left: 1px solid rgba(255, 255, 255, 0.08);
-  border-top: 2px solid rgba(232, 168, 74, 0.4);
-  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  text-align: center;
-  letter-spacing: 0.03em;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-}
-
-.hr-services-coverage-premium .services-subtitle-small {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin: 0 0 0.75rem;
-  text-align: center;
-}
-
-.hr-services-coverage-premium .services-coverage {
-  margin: 0;
-  font-size: 1rem;
-  color: var(--text);
-  line-height: 1.85;
-  letter-spacing: 0.025em;
-  opacity: 0.95;
-  text-align: center;
-}
-
-.hr-services-page .hr-services-why-main {
-  padding: 1.5rem 1.75rem;
-}
-
+.hr-services-page .hr-services-why-main,
 .hr-services-page .hr-services-cta-main {
   padding: 2rem 2.25rem;
   background: linear-gradient(160deg, rgba(24, 24, 24, 0.98) 0%, rgba(16, 16, 16, 0.98) 100%);
@@ -3482,15 +3296,7 @@ body.about-page {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
-.hr-services-page .hr-services-why-main .services-subtitle {
-  margin-top: 0;
-  margin-bottom: 0.75rem;
-  border-bottom: none;
-  padding-bottom: 0;
-  text-align: center;
-  font-size: 1.1rem;
-}
-
+.hr-services-page .hr-services-why-main .services-subtitle,
 .hr-services-page .hr-services-cta-main .services-subtitle {
   margin-top: 0;
   margin-bottom: 1rem;
@@ -3518,10 +3324,6 @@ body.about-page {
   justify-content: center;
   gap: 0.5rem;
   padding-left: 0;
-  text-align: center;
-  white-space: normal;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
 }
 
 .hr-services-page .hr-services-why-main .services-check-list li::before {
@@ -3533,7 +3335,7 @@ body.about-page {
 }
 
 .hr-services-page .hr-services-why-main .services-cta-wrap.hr-services-why-cta {
-  margin-top: 1rem;
+  margin-top: 1.25rem;
   margin-bottom: 0;
   display: flex;
   justify-content: center;
@@ -3549,13 +3351,13 @@ body.about-page {
 }
 
 .hr-services-page .hr-services-cta-main {
-  text-align: left;
+  text-align: center;
 }
 
 .hr-services-page .hr-services-cta-main .services-cta-wrap {
   margin: 0;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .hr-services-page .hr-services-cta-fullwidth {
@@ -3579,9 +3381,7 @@ body.about-page {
   border-left: 2px solid rgba(232, 168, 74, 0.5);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.03);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  text-align: left;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
+  text-align: center;
 }
 
 .hr-services-page .hr-services-bottom-blocks .services-box-inquire:hover {
@@ -3666,8 +3466,6 @@ body.about-page {
   font-size: 0.9rem;
   line-height: 1.6;
   margin-bottom: 0.5rem;
-  text-align: left;
-  white-space: nowrap;
 }
 
 .hr-services-page .services-sidebar .hr-services-why-sidebar .services-check-list li:last-child {
@@ -3718,7 +3516,7 @@ body.about-page {
   margin: 0 0 1.5rem;
   font-size: 0.95rem;
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 .graphic-design-page .services-offered > .hr-services-block-intro {
@@ -3736,16 +3534,6 @@ body.about-page {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
-  align-items: stretch;
-}
-
-.graphic-design-page .graphic-design-second-row-single {
-  grid-template-columns: 1fr;
-}
-
-.graphic-design-page .hr-services-cards-grid .hr-services-list-card:not(.hr-services-list-card-why) {
-  font-size: 0.95rem;
-  line-height: 1.1;
 }
 
 .graphic-design-page .graphic-design-second-row .services-process-block {
@@ -3841,11 +3629,13 @@ body.about-page {
   }
 
   .hr-services-coverage-why-row {
-    gap: 1.75rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
-  .hr-services-coverage-premium {
-    padding: 1.75rem 1.5rem;
+  .hr-services-coverage-why-row > div:first-child {
+    border-right: none;
+    margin-right: 0;
   }
 
   .hr-services-page .services-process-block {
@@ -3861,14 +3651,6 @@ body.about-page {
   .hr-services-page .hr-services-cta-main,
   .hr-services-page .hr-services-bottom-blocks .services-box-inquire {
     padding: 1.5rem 1.5rem;
-  }
-
-  .hr-services-page .services-process-list li,
-  .hr-services-page .services-list-simple li,
-  .hr-services-list-card .services-list-simple li,
-  .hr-services-page .hr-services-why-main .services-check-list li,
-  .hr-services-page .services-sidebar .hr-services-why-sidebar .services-check-list li {
-    white-space: normal;
   }
 
   .graphic-design-page .graphic-design-second-row {
@@ -5110,6 +4892,7 @@ body.about-page {
   line-height: 1.45;
   margin: 0;
   font-style: normal;
+  text-align: center;
 }
 .portfolio-item-description {
   font-size: 0.8rem;
@@ -5117,6 +4900,7 @@ body.about-page {
   line-height: 1.5;
   margin: 0.35rem 0 0;
   font-style: normal;
+  text-align: center;
 }
 .portfolio-highlights .portfolio-testimonial {
   margin-top: 2rem;
@@ -5269,7 +5053,12 @@ body.about-page {
   transform: scale(1.05);
 }
 
-/* Lightbox */
+/* Lightbox – desktop: full viewport; mobile: contained within portfolio area */
+.portfolio-highlights,
+.portfolio-curated {
+  position: relative;
+}
+
 .lightbox {
   position: fixed;
   inset: 0;
@@ -5282,16 +5071,30 @@ body.about-page {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.25s, visibility 0.25s;
+  pointer-events: none;
+  touch-action: manipulation;
 }
 
 .lightbox[aria-hidden="false"] {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
+}
+
+.lightbox-inner {
+  position: relative;
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .lightbox img {
-  max-width: 90vw;
+  max-width: 100%;
   max-height: 85vh;
+  width: auto;
+  height: auto;
   object-fit: contain;
   border-radius: 8px;
 }
@@ -5313,6 +5116,8 @@ body.about-page {
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease;
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  z-index: 201;
 }
 
 .lightbox-close:hover {
@@ -5320,11 +5125,44 @@ body.about-page {
   color: var(--bg);
 }
 
-/* Policy viewer modal (no nav, minimal footer) – above inquire modal when opened from within it */
+/* Mobile: contained image within viewport, not full-site centering */
+@media (max-width: 768px) {
+  .lightbox {
+    padding: 1rem;
+    align-items: flex-start;
+    padding-top: max(3rem, env(safe-area-inset-top));
+  }
+
+  .lightbox-inner {
+    max-width: 100%;
+    max-height: calc(100dvh - 5rem);
+    max-height: calc(100vh - 5rem);
+  }
+
+  .lightbox img {
+    max-width: 100%;
+    max-height: calc(100dvh - 6rem);
+    max-height: calc(100vh - 6rem);
+  }
+
+  .lightbox-close {
+    top: max(0.75rem, env(safe-area-inset-top));
+    right: 0.75rem;
+  }
+}
+
+/* Touch-friendly gallery items */
+.portfolio-featured-item .gallery-item,
+.portfolio-curated-grid .gallery-item {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Policy viewer modal (no nav, minimal footer) */
 .policy-modal {
   position: fixed;
   inset: 0;
-  z-index: 10500;
+  z-index: 11000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5408,53 +5246,31 @@ body.about-page {
   text-decoration: underline;
 }
 
-/* Universal CTA (before footer on every page) – premium */
+/* Universal CTA (before footer on every page) */
 .universal-cta {
-  padding: 4rem 1.5rem;
+  padding: 3rem 1.5rem;
   text-align: center;
-  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-card) 50%, rgba(22,22,22,0.95) 100%);
+  background: var(--bg-card);
   border-top: 1px solid var(--border);
-  position: relative;
 }
-.universal-cta::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  opacity: 0.6;
-}
-.universal-cta .container {
-  max-width: 36rem;
-  margin: 0 auto;
-}
+.universal-cta .container { max-width: 36rem; margin: 0 auto; }
 .universal-cta-headline {
   font-family: var(--font-display);
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--accent);
   margin: 0 0 0.5rem;
   line-height: 1.3;
-  letter-spacing: 0.01em;
 }
 .universal-cta-subtitle {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--text-muted);
   margin: 0 0 1.5rem;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 .universal-cta .btn {
   display: inline-block;
   width: auto;
-  padding: 0.85rem 1.75rem;
-  transition: transform var(--duration-normal) var(--ease-out-expo), box-shadow var(--duration-normal);
-}
-.universal-cta .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 28px var(--gold-glow);
 }
 .universal-cta .services-inquire-btn {
   width: auto;
@@ -5769,12 +5585,10 @@ body.policy-modal-view .universal-cta { display: none !important; }
   max-width: 56rem;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
 }
 
 .credentials-page-title {
   margin-bottom: 1.5rem;
-  justify-content: center;
 }
 
 .credentials-section-heading {
@@ -5785,13 +5599,10 @@ body.policy-modal-view .universal-cta { display: none !important; }
   margin: 0 0 1rem;
   padding-bottom: 0.4rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  text-align: center;
 }
 
 .credentials-academic {
   max-width: 28rem;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 0;
 }
 
@@ -5799,9 +5610,8 @@ body.policy-modal-view .universal-cta { display: none !important; }
   font-size: 1.05rem;
   color: var(--text-muted);
   line-height: 1.65;
-  margin: 0 auto 1.75rem;
+  margin: 0 0 1.75rem;
   max-width: 56ch;
-  text-align: center;
 }
 
 .credentials-group {
@@ -5814,26 +5624,16 @@ body.policy-modal-view .universal-cta { display: none !important; }
   color: var(--accent);
   margin: 0 0 1rem;
   letter-spacing: 0.02em;
-  text-align: center;
 }
 
 .credential-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1rem;
 }
 
-.credential-cards .credential-card {
-  flex: 0 0 calc((100% - 2rem) / 3);
-  box-sizing: border-box;
-}
-
 .credential-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 5rem;
+  display: block;
   background: linear-gradient(145deg, rgba(22, 22, 22, 0.98) 0%, rgba(18, 18, 18, 0.98) 100%);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
@@ -5864,18 +5664,10 @@ body.policy-modal-view .universal-cta { display: none !important; }
   color: var(--text);
   line-height: 1.4;
   display: block;
-  text-align: center;
-  overflow-wrap: break-word;
-  word-break: break-word;
 }
 
 .credentials-group-cta {
   margin: 1rem 0 0;
-  text-align: center;
-}
-
-.credentials-page .education-card {
-  text-align: center;
 }
 
 .credentials-cta {
@@ -5902,9 +5694,8 @@ body.policy-modal-view .universal-cta { display: none !important; }
 }
 
 @media (max-width: 768px) {
-  .credential-cards .credential-card {
-    flex: 0 0 100%;
-    max-width: 100%;
+  .credential-cards {
+    grid-template-columns: 1fr;
   }
 
   .credentials-cta {
@@ -7137,8 +6928,8 @@ body.policy-modal-view .universal-cta { display: none !important; }
   }
 
   .lightbox img {
-    max-width: 95vw;
-    max-height: 80vh;
+    max-width: 100%;
+    max-height: calc(100dvh - 6rem);
   }
 }
 
@@ -7172,31 +6963,4 @@ pre {
 @media (min-width: 601px) and (max-width: 900px) {
   .section-title.split-title .title-bold { font-size: 1.5rem; }
   .portfolio-carousel-wrap { margin-left: auto; margin-right: auto; }
-}
-}
-}
-
-/* "All about me" in About dropdown – mobile only */
-.nav-about-mobile-only {
-  display: none;
-}
-@media (max-width: 768px) {
-  .nav-about-mobile-only {
-    display: list-item;
-  }
-}
-
-/* Mobile only: center align all page content */
-@media (max-width: 768px) {
-  main,
-  .section,
-  .container,
-  .page {
-    text-align: center;
-  }
-
-  .container {
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
