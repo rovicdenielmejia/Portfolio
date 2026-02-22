@@ -1512,20 +1512,25 @@ main:has(.section-home) .premium-divider {
 }
 .about-preview-content {
   min-width: 0;
+  text-align: center;
 }
-.about-preview-lead,
-.about-preview-text {
+.about-preview-lead {
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text);
   line-height: 1.65;
-  margin: 0 0 1rem;
+  margin: 0 auto 1rem;
   max-width: 48ch;
-  margin-left: auto;
-  margin-right: auto;
+  text-wrap: balance;
 }
 .about-preview-text {
-  margin-bottom: 2rem;
+  font-size: 0.9em;
+  font-weight: 550;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0 auto 2rem;
+  max-width: 48ch;
+  text-wrap: balance;
 }
 .about-preview-cta {
   margin: 0;
@@ -1548,6 +1553,14 @@ main:has(.section-home) .premium-divider {
   .about-preview-inner {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+  .about-preview-content {
+    text-align: center;
+  }
+  .about-preview-lead,
+  .about-preview-text {
+    margin-left: auto;
+    margin-right: auto;
   }
   .about-preview-photo {
     order: -1;
