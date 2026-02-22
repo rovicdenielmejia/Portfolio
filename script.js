@@ -1,27 +1,6 @@
 (function () {
   'use strict';
 
-  // Cookie Banner
-  (function () {
-    if (typeof localStorage === 'undefined') return;
-    var banner = document.getElementById('cookie-banner');
-    if (!banner) {
-      banner = document.createElement('div');
-      banner.id = 'cookie-banner';
-      banner.className = 'cookie-banner';
-      banner.innerHTML = '<div class="cookie-content"><p>This website uses cookies to improve user experience, analyze site traffic, and ensure secure functionality. By continuing to browse, you agree to our use of cookies in accordance with our <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.</p><div class="cookie-buttons"><button type="button" id="cookie-accept">Accept All</button><button type="button" id="cookie-decline">Decline</button></div></div>';
-      document.body.appendChild(banner);
-    }
-    function hide() { banner.style.display = 'none'; }
-    function accept() { localStorage.setItem('cookieConsent', 'accepted'); hide(); }
-    function decline() { localStorage.setItem('cookieConsent', 'declined'); hide(); }
-    var acceptBtn = document.getElementById('cookie-accept');
-    var declineBtn = document.getElementById('cookie-decline');
-    if (acceptBtn) acceptBtn.addEventListener('click', accept);
-    if (declineBtn) declineBtn.addEventListener('click', decline);
-    if (!localStorage.getItem('cookieConsent')) banner.style.display = 'block';
-  })();
-
   // Year in footer
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();

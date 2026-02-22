@@ -7176,68 +7176,6 @@ pre {
 }
 }
 
-/* Cookie Banner */
-.cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #111;
-  color: #fff;
-  padding: 20px;
-  z-index: 9999;
-  display: none;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
-}
-
-.cookie-banner .cookie-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.cookie-banner .cookie-content p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.5;
-  flex: 1;
-  min-width: 200px;
-}
-
-.cookie-banner .cookie-content a {
-  color: #c9a227;
-  text-decoration: underline;
-}
-
-.cookie-banner .cookie-buttons {
-  display: flex;
-  gap: 10px;
-  flex-shrink: 0;
-}
-
-.cookie-banner .cookie-buttons button {
-  margin-left: 0;
-  padding: 8px 16px;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-  border-radius: 4px;
-}
-
-.cookie-banner .cookie-buttons button:first-child {
-  background-color: #c9a227;
-  color: #000;
-}
-
-.cookie-banner .cookie-buttons button:last-child {
-  background-color: #444;
-  color: #fff;
-}
-
 /* "All about me" in About dropdown – mobile only */
 .nav-about-mobile-only {
   display: none;
