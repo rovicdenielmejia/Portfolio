@@ -405,6 +405,47 @@ body.page main {
   object-position: center 20%;
 }
 
+#currency-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-right: 0.5rem;
+}
+.currency-switcher-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.currency-switcher-btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.currency-switcher-btn:hover {
+  color: var(--text);
+  border-color: var(--text-muted);
+}
+.currency-switcher-btn.is-active {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(232, 168, 74, 0.08);
+}
+@media (max-width: 700px) {
+  #currency-switcher {
+    margin-right: 0.25rem;
+  }
+  .currency-switcher-label {
+    display: none;
+  }
+}
+
 .nav-links {
   display: flex;
   gap: 1.75rem;

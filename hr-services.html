@@ -57,6 +57,7 @@
   <header class="header">
     <nav class="nav" aria-label="Main navigation">
       <a href="home" class="logo"><span class="logo-circle"><img src="Assets/about-photo.png" alt="Rovic Mejia" class="logo-img" width="48" height="48" loading="lazy"></span>Rovic Mejia</a>
+      <div id="currency-switcher"></div>
       <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
       <ul class="nav-links">
         <li><a href="home">Home</a></li>
@@ -171,19 +172,19 @@
         <div class="landing-pricing-grid">
           <div class="landing-pricing-card">
             <h4>Per-Hire Recruitment</h4>
-            <p class="price">₱6,000 – ₱15,000</p>
+            <p class="price" data-currency-min="6000" data-currency-max="15000">₱6,000 – ₱15,000</p>
             <p>Per successful hire. Talent sourcing, screening, endorsement, interview coordination, and onboarding support.</p>
             <a href="hr-services-package" class="btn btn-outline">View Packages</a>
           </div>
           <div class="landing-pricing-card featured">
             <h4>Recruitment Retainer</h4>
-            <p class="price">₱20,000 – ₱40,000/mo</p>
+            <p class="price" data-currency-min="20000" data-currency-max="40000" data-currency-suffix="/mo">₱20,000 – ₱40,000/mo</p>
             <p>Ongoing recruitment oversight. Structured hiring support for regular hiring needs. Ideal for growing teams.</p>
             <button type="button" class="btn btn-primary services-inquire-btn" data-inquire-subject="Recruitment Retainer Inquiry - Rovic Mejia" data-inquire-title="Book a Strategic Consultation">Get a Quote</button>
           </div>
           <div class="landing-pricing-card">
             <h4>HR Consulting &amp; Projects</h4>
-            <p class="price">₱25,000 – ₱120,000+</p>
+            <p class="price" data-currency-min="25000" data-currency-max="120000">₱25,000 – ₱120,000+</p>
             <p>Employee handbook, HR policy, KPI systems, due process docs, onboarding systems. Project or package scope.</p>
             <a href="hr-services-package" class="btn btn-outline">View Packages</a>
           </div>

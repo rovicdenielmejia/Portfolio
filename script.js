@@ -362,4 +362,93 @@
       if (e.key === 'Escape') closePolicyModal();
     });
   })();
+
+  // Currency switcher (country-based default, PHP | USD)
+  (function () {
+    var STORAGE_KEY = 'preferredCurrency';
+    var RATE_PHP_TO_USD = 0.017;
+    var currency = localStorage.getItem(STORAGE_KEY) || null;
+
+    function formatPHP(num) {
+      return '₱' + Number(num).toLocaleString('en-PH', { maximumFractionDigits: 0, minimumFractionDigits: 0 });
+    }
+    function formatUSD(num) {
+      return '$' + Math.round(num * RATE_PHP_TO_USD).toLocaleString('en-US', { maximumFractionDigits: 0, minimumFractionDigits: 0 });
+    }
+
+    function updatePrices() {
+      var cur = currency || 'PHP';
+      var isUSD = cur === 'USD';
+      document.querySelectorAll('[data-currency-value], [data-currency-min]').forEach(function (el) {
+        var prefix = el.getAttribute('data-currency-prefix') || '';
+        var suffix = el.getAttribute('data-currency-suffix') || '';
+        var min = el.getAttribute('data-currency-min');
+        var max = el.getAttribute('data-currency-max');
+        var single = el.getAttribute('data-currency-value');
+        var text;
+        if (single !== null) {
+          var n = parseInt(single, 10);
+          text = prefix + (isUSD ? formatUSD(n) : formatPHP(n)) + suffix;
+        } else if (min !== null && max !== null) {
+          var a = parseInt(min, 10);
+          var b = parseInt(max, 10);
+          text = prefix + (isUSD ? formatUSD(a) + ' – ' + formatUSD(b) : formatPHP(a) + ' – ' + formatPHP(b)) + suffix;
+        } else if (min !== null) {
+          var m = parseInt(min, 10);
+          text = prefix + (isUSD ? formatUSD(m) : formatPHP(m)) + suffix;
+        } else return;
+        el.textContent = text;
+      });
+    }
+
+    function renderSwitcher(container) {
+      if (!container) return;
+      container.innerHTML = '<span class="currency-switcher-label" aria-hidden="true">Currency:</span><button type="button" class="currency-switcher-btn" data-currency="PHP" aria-pressed="false">PHP</button><button type="button" class="currency-switcher-btn" data-currency="USD" aria-pressed="false">USD</button>';
+      container.setAttribute('aria-label', 'Select currency');
+      var cur = currency || 'PHP';
+      container.querySelectorAll('.currency-switcher-btn').forEach(function (btn) {
+        var c = btn.getAttribute('data-currency');
+        btn.setAttribute('aria-pressed', c === cur ? 'true' : 'false');
+        btn.classList.toggle('is-active', c === cur);
+        btn.addEventListener('click', function () {
+          currency = c;
+          localStorage.setItem(STORAGE_KEY, c);
+          container.querySelectorAll('.currency-switcher-btn').forEach(function (b) {
+            var x = b.getAttribute('data-currency');
+            b.setAttribute('aria-pressed', x === c ? 'true' : 'false');
+            b.classList.toggle('is-active', x === c);
+          });
+          updatePrices();
+        });
+      });
+    }
+
+    function init() {
+      var container = document.getElementById('currency-switcher');
+      var hasPrices = document.querySelectorAll('[data-currency-value], [data-currency-min]').length > 0;
+      if (!container || !hasPrices) return;
+
+      if (currency === null) {
+        fetch('https://ip-api.com/json?fields=countryCode').then(function (r) { return r.json(); }).then(function (data) {
+          currency = (data && data.countryCode === 'PH') ? 'PHP' : 'USD';
+          localStorage.setItem(STORAGE_KEY, currency);
+          renderSwitcher(container);
+          updatePrices();
+        }).catch(function () {
+          currency = 'PHP';
+          renderSwitcher(container);
+          updatePrices();
+        });
+      } else {
+        renderSwitcher(container);
+        updatePrices();
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
 })();
