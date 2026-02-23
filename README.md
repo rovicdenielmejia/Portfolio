@@ -88,6 +88,10 @@ python -m http.server 8000
 - `Assets/` — images, icons
 - `Portfolio/` — portfolio images
 
+## Project structure
+
+See [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) for the full layout. Documentation lives in `docs/` (deploy, CTA/redirects).
+
 ## License
 
 © 2026 Rovic Mejia. All Rights Reserved.

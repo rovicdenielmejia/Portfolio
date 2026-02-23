@@ -34,6 +34,8 @@ Rewrites map extensionless paths to the corresponding `.html` files (no redirect
 | `/portfolio-specialized` | `/portfolio-specialized.html` |
 | `/services` | `/services.html` |
 | `/graphic-design` | `/graphic-design.html` |
+| `/landing-graphic-design` | `/graphic-design.html` |
+| `/landing-hr-consulting` | `/hr-services.html` |
 | `/hr-services` | `/hr-services.html` |
 | `/hr-recruitment` | `/hr-services` (rewrite to same service page) |
 | `/certification` | `/certification.html` |
@@ -184,6 +186,8 @@ Each category page has:
 |----------------|-------------|------|
 | `/inquire` | `/contact` | Use `contact` in links; no separate Inquire page. |
 | `/hr-recruitment` | `/hr-services` | 301 on Netlify; rewrite on Vercel to same content as hr-services. |
+| `/landing-graphic-design` | `/graphic-design` | Nav links may use this path. |
+| `/landing-hr-consulting` | `/hr-services` | Nav links may use this path. |
 | `/` | `/home` (serves `home.html`) | Root shows home. |
 
 ---
