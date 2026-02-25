@@ -373,7 +373,7 @@
       return '₱' + Number(num).toLocaleString('en-PH', { maximumFractionDigits: 0, minimumFractionDigits: 0 });
     }
     function formatUSD(num) {
-      return '$' + Math.round(num * RATE_PHP_TO_USD).toLocaleString('en-US', { maximumFractionDigits: 0, minimumFractionDigits: 0 });
+      return '$' + Math.ceil(num * RATE_PHP_TO_USD).toLocaleString('en-US', { maximumFractionDigits: 0, minimumFractionDigits: 0 });
     }
 
     function updatePrices() {
