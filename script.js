@@ -372,8 +372,16 @@
     function formatPHP(num) {
       return '₱' + Number(num).toLocaleString('en-PH', { maximumFractionDigits: 0, minimumFractionDigits: 0 });
     }
+    function roundUpToFlatUSD(rawUSD) {
+      var n = Math.ceil(rawUSD);
+      if (n <= 0) return 0;
+      if (n < 100) return Math.ceil(n / 5) * 5;   // round up to nearest 5
+      return Math.ceil(n / 25) * 25;              // round up to nearest 25
+    }
     function formatUSD(num) {
-      return '$' + Math.ceil(num * RATE_PHP_TO_USD).toLocaleString('en-US', { maximumFractionDigits: 0, minimumFractionDigits: 0 });
+      var raw = num * RATE_PHP_TO_USD;
+      var flat = roundUpToFlatUSD(raw);
+      return '$' + flat.toLocaleString('en-US', { maximumFractionDigits: 0, minimumFractionDigits: 0 });
     }
 
     function updatePrices() {
