@@ -366,7 +366,7 @@
   // Currency switcher (country-based default, PHP | USD)
   (function () {
     var STORAGE_KEY = 'preferredCurrency';
-    var RATE_PHP_TO_USD = 0.017;
+    var RATE_PHP_TO_USD = 0.0172;  // 1 PHP ≈ 0.0172 USD (1 USD ≈ 58.14 PHP)
     var currency = localStorage.getItem(STORAGE_KEY) || null;
 
     function formatPHP(num) {
@@ -375,8 +375,7 @@
     function roundUpToFlatUSD(rawUSD) {
       var n = Math.ceil(rawUSD);
       if (n <= 0) return 0;
-      if (n < 100) return Math.ceil(n / 5) * 5;   // round up to nearest 5
-      return Math.ceil(n / 25) * 25;              // round up to nearest 25
+      return Math.ceil(n / 5) * 5;   // round up to nearest $5
     }
     function formatUSD(num) {
       var raw = num * RATE_PHP_TO_USD;
