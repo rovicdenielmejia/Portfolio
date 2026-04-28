@@ -1,5 +1,6 @@
 {
-  "outputDirectory": ".next",
+  "framework": null,
+  "outputDirectory": ".",
   "headers": [
     {
       "source": "/(.*)",
